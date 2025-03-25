@@ -1,12 +1,13 @@
-import theme from "./constants/theme";
+// import theme from "./constants/theme";
+import Navbar from "./components/main/Navbar";
+import Footer from "./components/main/Footer";
 
 function App() {
   return (
     <>
       <div>
-        <h1 style={{ color: theme.colors.text.primary }}>Primary Text</h1>
-        <h2 style={{ color: theme.colors.text.secondary }}>Secondary Text</h2>
-        <p style={{ color: theme.colors.text.tertiary }}>Tertiary Text</p>
+        <Navbar/>
+        <Footer/>
       </div>
     </>
   )

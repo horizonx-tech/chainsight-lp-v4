@@ -1,3 +1,4 @@
+
 const theme={
     colors:{
         text:{
@@ -5,7 +6,10 @@ const theme={
             secondary: '#FFE000',
             tertiary: '#F8FAFC'
         },
-        background: '#000000'
+        background:{
+            primary: '#00000',
+            secondary: '#09090B'
+        }
     },
 };
 
