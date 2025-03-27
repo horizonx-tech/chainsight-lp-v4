@@ -5,6 +5,9 @@ import Hero from "./components/main/Hero";
 // import Sponsors from "./components/main/Sponsors";
 import Highlights from "./components/sub/Highlights";
 import Faq from "./components/main/Faq";
+import Connect from "./components/sub/Connect";
+import Subscription from "./components/main/Subscription";
+import Features from "./components/main/Features";
 
 function App() {
   return (
@@ -15,7 +18,10 @@ function App() {
         <Hero/>
         {/* <Sponsors/> */}
         <Highlights/>
+        <Features/>
+        <Subscription/>
         <Faq/>
+        <Connect/>
         <Footer/>
       </div>
     </div>
