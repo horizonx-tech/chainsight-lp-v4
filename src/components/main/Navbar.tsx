@@ -10,67 +10,45 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: -50, 
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut"
-      }
-    },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut"
-      }
-    }
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeInOut" } },
   };
 
   const menuItemVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: -20 
-    },
-    visible: (custom: number) => ({ 
-      opacity: 1, 
+    hidden: { opacity: 0, y: -10 },
+    visible: (custom: number) => ({
+      opacity: 1,
       y: 0,
-      transition: {
-        delay: custom * 0.1,
-        duration: 0.3
-      }
-    })
+      transition: { delay: custom * 0.1, duration: 0.3 },
+    }),
   };
 
-  const menuItems = ["Resources", "Ecosystem", "Products", "Docs", "Contact Us"];
+  const menuItems = ["Resources", "Ecosystem", "Product", "Docs", "Contact Us"];
 
   return (
-    <div className="absolute top-10 left-0 w-full flex justify-center">
-      <div className="flex flex-col items-center justify-center w-full">
+    <div className="relative top-7 left-0 w-full mb-20 sm:mb-0 flex justify-center z-50">
+      <div className="absolute top-0 left-0 w-full h-24 pointer-events-none">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[30vw] h-40 bg-[#4A4A4A] blur-[100px] opacity-35 rounded-full"></div>
+      </div>
+
+      <div className="flex flex-col relative items-center justify-center w-full z-10">
         <div className="w-[85vw] flex items-center justify-between">
-          <div className="flex gap-1">
-            <div className="w-[22.82px] h-[13.48px] mt-[9.6px]">
-              <img src="/logo.svg" alt="ChainSight"/>
-            </div>
-            <div style={{ color: theme.colors.text.primary }}>
-              ChainSight
+          <div className="flex">
+            <div className="w-[122px] h-[25px]">
+              <img src="/logo.svg" alt="ChainSight" />
             </div>
           </div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Menu */}
           <div 
-            className="hidden lg:flex text-[#FAFAFA] rounded-full" 
-            style={{ 
-              color: theme.colors.text.primary, 
-              backgroundColor: theme.colors.background.secondary 
-            }}
+            className="hidden lg:flex bg-[#18181B] text-[#FAFAFA] rounded-full" 
+            style={{ color: theme.colors.text.primary }}
           >
-            <div className="flex p-2">
+            <div className="flex p-1.5 font-semibold text-xs font-sans">
               {menuItems.map((item, index) => (
                 <div
                   key={index}
-                  className={`my-3 px-3 h-3 flex items-center justify-center ${
+                  className={`my-3 px-3 h-2 flex items-center justify-center ${
                     index < 4 ? "border-r-2 border-[#27272A]" : ""
                   }`}
                 >
@@ -80,52 +58,49 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Button 
-            variant="primary" 
-            size="lg" 
-            className="hidden lg:flex gap-2 p-2 py-4 text-sm"
-          >
-            <MdOutlineArrowOutward size={20} className="mt-1"/> 
+          <Button variant="primary" size="lg" className="hidden lg:flex gap-1 p-2 py-3 text-xs">
+            <MdOutlineArrowOutward size={20} className="" />
             Launch App
           </Button>
 
           {/* Mobile Menu Toggle */}
-          <div 
-            className="lg:hidden cursor-pointer" 
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <AiOutlineClose size={30}/> : <RxHamburgerMenu size={30}/>}
+          <div className="lg:hidden cursor-pointer z-50" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <AiOutlineClose size={30} /> : <RxHamburgerMenu size={30} />}
           </div>
         </div>
-
-        {/* Mobile Navigation Menu */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={menuVariants}
-              className="flex flex-col items-center justify-center w-full gap-5 mt-3 lg:hidden"
-            >
-              {menuItems.map((item, index) => (
-                <motion.div
-                  key={index}
-                  custom={index}
-                  initial="hidden"
-                  animate="visible"
-                  variants={menuItemVariants}
-                  className={`my-3 px-3 h-3 flex items-center justify-center ${
-                    index < 4 ? "border-r-2 border-[#27272A]" : ""
-                  }`}
-                >
-                  {item}
-                </motion.div>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
+
+      {/* Mobile Navigation Menu (Absolute Positioned) */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={menuVariants}
+            className="fixed top-0 left-0 w-full h-screen bg-black/80 flex flex-col items-center justify-center space-y-5 z-40"
+          >
+            {/* Close Button (Separate, Always on Top) */}
+            <div className="absolute top-5 right-5 z-50 cursor-pointer" onClick={() => setIsOpen(false)}>
+              <AiOutlineClose size={35} className="text-white" />
+            </div>
+
+            {/* Menu Items */}
+            {menuItems.map((item, index) => (
+              <motion.div
+                key={index}
+                custom={index}
+                initial="hidden"
+                animate="visible"
+                variants={menuItemVariants}
+                className="text-white text-lg"
+              >
+                {item}
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
