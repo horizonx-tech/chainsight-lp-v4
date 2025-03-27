@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-type Variant = "primary" | "secondary" | "outline";
+type Variant = "primary" | "secondary" | "tertiary";
 type Size = "sm" | "md" | "lg";
 
 interface ButtonProps {
@@ -20,13 +20,13 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
 }) => {
   const variantStyles: Record<Variant, string> = {
-    primary: "bg-[#09090B] rounded-full text-[#FFE000]",
-    secondary: "bg-gray-600 text-white hover:bg-gray-700",
-    outline: "border border-gray-600 text-gray-600 hover:bg-gray-100",
+    primary: "bg-[#18181B] rounded-full text-[#FFE000]",
+    secondary: "bg-[#09090B] border border-[#27272A] rounded-md hover:bg-[#27272A]",
+    tertiary: "bg-[#27272A] border border-[#27272A] rounded-md hover:bg-neutral-800",
   };
 
   const sizeStyles: Record<Size, string> = {
-    sm: "px-3 py-1 text-sm",
+    sm: "px-5 py-2 text-xs",
     md: "px-4 py-2 text-base",
     lg: "px-6 py-3 text-lg",
   };
