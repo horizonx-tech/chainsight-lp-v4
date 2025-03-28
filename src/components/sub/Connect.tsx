@@ -67,7 +67,7 @@ const Connect = () => {
           </div>
         </div>
 
-        <button className="w-full max-w-xs h-10 rounded-full bg-[#355DEA] text-sm sm:text-base">
+        <button className="max-w-md p-2 h-10 rounded-full bg-[#355DEA] text-sm sm:text-base">
           Send it over!
         </button>
       </div>
