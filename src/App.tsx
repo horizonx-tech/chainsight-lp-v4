@@ -10,7 +10,6 @@ import Subscription from "./components/main/Subscription";
 import Features from "./components/main/Features";
 import OracleInfo from "./components/main/OracleInfo";
 import Testimonial from "./components/main/Testimonial";
-import Usage from "./components/main/Usage";
 
 function App() {
   return (

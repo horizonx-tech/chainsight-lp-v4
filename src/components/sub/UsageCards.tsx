@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { MdArrowOutward } from "react-icons/md";
 const UsageCards = () => {
   return (

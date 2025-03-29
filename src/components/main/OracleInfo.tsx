@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { IoMdArrowRoundForward } from "react-icons/io";
 
 const OracleInfo = () => {
