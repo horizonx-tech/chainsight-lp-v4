@@ -12,8 +12,6 @@ const Connect = () => {
           Leave us a line, we contact you within a few hours.
         </p>
       </div>
-
-      {/* Toggle Buttons */}
       <div className="flex flex-col gap-6 items-center justify-center w-full max-w-md">
         <div className="bg-[#212123] text-[#A1A1AA] flex gap-2 rounded-full p-0.5 text-xs sm:text-sm relative w-full max-w-xs">
           {["Contact Us", "Customization"].map((item, index) => (
@@ -33,8 +31,6 @@ const Connect = () => {
             </div>
           ))}
         </div>
-
-        {/* Form Inputs */}
         <div className="w-full max-w-md flex flex-col gap-4">
           <input
             type="text"
@@ -56,12 +52,12 @@ const Connect = () => {
             className="border bg-[#09090B] border-[#27272A] p-2 rounded-md w-full resize-none placeholder:text-xs placeholder:text-[#A1A1AA]"
             placeholder="A brief summary of what you need."
           />
-          <div className="flex items-start gap-2">
+          <div className="flex items-center justify-center gap-2">
             <input
               type="checkbox"
-              className="w-4 h-4 bg-transparent border border-gray-500 appearance-none cursor-pointer mt-1"
+              className="w-4 h-4 bg-transparent border border-gray-500 cursor-pointer mt-1"
             />
-            <div className="text-[#71717A] text-xs sm:text-sm">
+            <div className="text-[#71717A] text-xs sm:text-sm ">
               I agree to be contacted by TechStrata regarding this demo request *
             </div>
           </div>
