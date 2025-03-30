@@ -5,17 +5,17 @@ const Features = () => {
   return (
     <div>
     <div className='flex items-center justify-center'>
-      <div className='bg-[#040507] flex items-center justify-center w-[80%] relative'>
+      <div className='bg-[#040507] flex items-center justify-center max-w-[80vw] relative'>
         <div className="absolute inset-0 w-full h-full p-10">
             <img src="/databg.svg" alt="" className="w-full h-full object-cover" />
         </div>
         <div className='flex flex-col gap-4 items-center justify-center w-[80%] relative z-50'>
         <h2 className='text-[#FAFAFA] text-xl md:text-2xl mt-5'>Everything You Need for Blockchain Data</h2>
-        <div className="bg-[#09090B] text-[#FFFFFF] flex md:gap-2 rounded-full p-1 overflow-scroll md:overflow-hidden text-sm relative w-full">
+        <div  style={{scrollbarWidth: "none"}} className="bg-[#09090B] text-[#FFFFFF] flex md:gap-2 rounded-full p-1 overflow-x-scroll overflow-y-hidden h-10 md:overflow-hidden text-sm relative max-w-[90%] md:w-full ">
           {[{name:"data indexing",image:"/dataIndexing.svg"}, {name:"Oracle deployment",image:"/oracleDeployment.svg"},{name:"API Access", image:"apiAcess.svg"},{name:"Analytics Dashboards",image:"/analyticsDashboard.svg"}].map((item, index) => (
             <div
               key={index}
-              className="relative cursor-pointer flex justify-center px-1 py-2 w-full items-center min-w-[100px]  gap-2"
+              className="relative cursor-pointer flex justify-center px-1 py-2 w-full items-center min-w-[160px] gap-3"
               onClick={() => setClick(index)}
             >
               {click === index && (
