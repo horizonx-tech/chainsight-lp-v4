@@ -32,7 +32,7 @@ const Highlights = () => {
 
   return (
       <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full max-w-[85vw] border border-[#2E2E2E] my-20 rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full max-w-[80vw] border border-[#2E2E2E] my-20 rounded-2xl overflow-hidden">
               {features.map((feature, index) => {
                   return (
                       <div 

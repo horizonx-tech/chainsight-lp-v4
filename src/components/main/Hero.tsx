@@ -8,10 +8,10 @@ const Hero = () => {
   return (
     <section className="w-full relative lg:border-y-2 border-[#111827]">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="hidden lg:flex absolute -top-1 left-[3.8%] xl:left-[4%] -translate-y-3 text-white font-extralight text-xl md:text-2xl lg:text-3xl"><GoPlus/></div>
-        <div className="hidden lg:flex absolute -top-1 right-[3.8%] xl:right-[4%] -translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"><GoPlus/></div>
-        <div className="hidden lg:flex absolute -bottom-1 left-[3.8%] xl:left-[4%] translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"><GoPlus/></div>
-        <div className="hidden lg:flex absolute -bottom-1 right-[3.8%] xl:right-[4%] translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"><GoPlus/></div>
+        <div className="hidden lg:flex absolute -top-1 left-[3.4%] xl:left-[4.2%] -translate-y-3 text-white font-extralight text-xl md:text-2xl lg:text-3xl"><GoPlus/></div>
+        <div className="hidden lg:flex absolute -top-1 right-[3.4%] xl:right-[4.2%] -translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"><GoPlus/></div>
+        <div className="hidden lg:flex absolute -bottom-1 left-[3.4%] xl:left-[4.2%] translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"><GoPlus/></div>
+        <div className="hidden lg:flex absolute -bottom-1 right-[3.4%] xl:right-[4.2%] translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"><GoPlus/></div>
       </div>
       <div className="flex flex-col min-h-screen items-center justify-center font-sans gap-10 md:gap-12 px-4 md:px-10 lg:px-12">
         <div className="w-full flex sm:hidden items-center justify-center">
