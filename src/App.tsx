@@ -1,7 +1,7 @@
 import Navbar from "./components/main/Navbar";
 import Footer from "./components/main/Footer";
 import Hero from "./components/main/Hero";
-// import Sponsors from "./components/main/Sponsors";
+import Sponsors from "./components/main/Sponsors";
 import Highlights from "./components/main/Highlights";
 import Faq from "./components/main/Faq";
 import Connect from "./components/main/Connect";
@@ -19,7 +19,7 @@ function App() {
       <div className="relative">
         <Navbar/>
         <Hero/>
-        {/* <Sponsors/> */}
+        <Sponsors/>
         <Highlights/>
         <Features/>
         <OracleInfo/>
