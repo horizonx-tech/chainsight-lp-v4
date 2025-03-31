@@ -25,7 +25,7 @@ const Updates = () => {
       }, []);
   return (
     <div className="  flex items-center justify-center">
-      <div className="bg-[#09090B] max-w-[80vw] rounded-xl">
+      <div className="bg-[#09090B] max-w-[90vw] md:max-w-[80vw] rounded-xl">
       <div className="flex flex-col items-center gap-4 w-full p-5">
         <div className="flex justify-between items-center w-full">
         <h2 className="text-2xl text-[#FAFAFA]">Our Updates</h2>

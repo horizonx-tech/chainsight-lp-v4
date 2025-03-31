@@ -4,7 +4,7 @@ import SubscriptionCards from '../sub/SubscriptionCards';
 const Subscription = () => {
   const [click, setClick] = useState(0);
   return (
-    <div className='flex flex-col items-center gap-5 justify-center my-10 mt-15 px-4'>
+    <div className='flex flex-col items-center gap-5 justify-center my-5 md:my-10 mt-15 px-4'>
       <div className='flex flex-col gap-2 items-center justify-center text-center'>
         <h2 className='text-2xl text-[#FAFAFA] font-semibold'>Portal Subscription Plans</h2>
         <p className='text-[#A1A1AA] text-xs font-extralight max-w-lg'>Add a concise value statement that addresses price sensitivity and showcases plan flexibility. Focus on transformation and results while keeping it under 2 lines. Align with your pricing table options.</p>

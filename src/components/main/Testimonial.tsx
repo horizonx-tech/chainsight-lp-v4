@@ -3,7 +3,7 @@
 const Testimonial = () => {
   return (
     <div className='w-full flex items-center justify-center'>
-      <div className='bg-[#010306] w-[80%] rounded-xl h-auto flex flex-col lg:flex-row items-center justify-center text-center lg:text-left'>
+      <div className='bg-[#010306] w-[90%] md:w-[80%] rounded-xl h-auto flex flex-col lg:flex-row items-center justify-center text-center lg:text-left'>
           <div className='flex flex-col gap-3 w-[90%] md:w-[80%] pl-5'>
             <div className='flex gap-2 items-center '>
             <img src="/avatar.svg" alt="" className='w-5' />

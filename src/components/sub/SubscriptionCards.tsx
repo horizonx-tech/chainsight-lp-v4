@@ -11,7 +11,7 @@ interface SubscriptionCardsProps {
 
 const SubscriptionCards = ({variant, title, content, monthlySubscription, features}: SubscriptionCardsProps) => {
    return (
-     <div className={`relative w-[16rem] sm:w-[20rem] h-[30rem] border ${variant=="primary"?"border-[#27272A]":"border-white"} bg-[#09090B] rounded-lg overflow-hidden`}>
+     <div className={`relative max-w-[90vw] sm:w-[20rem] h-[30rem] border ${variant=="primary"?"border-[#27272A]":"border-white"} bg-[#09090B] rounded-lg overflow-hidden`}>
        <div className={`${variant=="secondary"?"flex":"hidden"} items-start absolute top-0 left-0 w-full h-24 z-10`}>
          <div className={`absolute top-0 left-1/2 transform -translate-x-1/2 w-[20vw] h-10 bg-[#c0ae3f] blur-[50px]  rounded-full`}></div>
        </div>

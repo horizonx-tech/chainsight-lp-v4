@@ -5,7 +5,7 @@ const Features = () => {
   return (
     <div>
     <div className='flex items-center justify-center'>
-      <div className='bg-[#040507] flex items-center justify-center max-w-[80vw] relative'>
+      <div className='bg-[#040507] flex items-center justify-center max-w-[90vw] md:max-w-[80vw] relative'>
         <div className="absolute inset-0 w-full h-full p-10">
             <img src="/databg.svg" alt="" className="w-full h-full object-cover" />
         </div>
