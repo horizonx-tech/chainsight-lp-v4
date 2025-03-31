@@ -20,8 +20,8 @@ const Sponsors = () => {
               ease: 'linear',
               repeat: Infinity,
             }}
-            initial={{ translateX: 0 }}
-            animate={{ translateX: '-50%' }}
+            initial={{ translateX: '-50%'}}
+            animate={{ translateX:0 }}
             className="flex flex-none gap-16 pr-16 py-5"
           >
             {[...new Array(2)].fill(0).map((_, index) => (
