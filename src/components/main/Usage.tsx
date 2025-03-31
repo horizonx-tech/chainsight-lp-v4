@@ -13,7 +13,7 @@ const Usage = () => {
   const [visibleCards, setVisibleCards] = useState(3);
   
   const userTypes = [
-    {name: "Builders & Developers", image: "/dataIndexing.svg"},
+    {name: "Developers", image: "/dataIndexing.svg"},
     {name: "Traders", image: "/oracleDeployment.svg"},
     {name: "Enterprises", image: "apiAcess.svg"}
   ];
@@ -39,7 +39,7 @@ const Usage = () => {
 
   return (
     <div className="w-full flex items-center justify-center mb-10">
-      <div className="flex flex-col gap-4 items-start justify-center bg-[#09090B] rounded-xl max-w-[80vw] p-5">
+      <div className="flex flex-col gap-4 items-start justify-center bg-[#09090B] rounded-xl max-w-[90vw] md:max-w-[80vw] p-5">
         <h2 className="text-xl text-white">Who can use ChainSight?</h2>
         <div className='flex justify-between w-full'>
           <div  style={{scrollbarWidth: "none" }} className="text-[#FFFFFF] flex gap-1 rounded-full p-1 text-sm relative w-[80%] overflow-x-scroll overflow-y-hidden md:overflow-hidden">

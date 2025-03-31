@@ -93,7 +93,7 @@ const Faq = () => {
   return (
     <div className="flex justify-center px-4 sm:px-6 lg:px-8">
       <div 
-        className='w-full max-w-[80vw] rounded-xl my-5' 
+        className='w-full max-w-[90vw] md:max-w-[80vw] rounded-xl my-5' 
         style={{backgroundColor:theme.colors.background.secondary}}
       >
         <div className="flex flex-col gap-3.5 md:flex-row p-6 md:p-14">

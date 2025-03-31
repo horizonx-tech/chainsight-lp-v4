@@ -3,9 +3,9 @@ import { IoMdArrowRoundForward } from "react-icons/io";
 
 const OracleInfo = () => {
   return (
-    <div className='flex flex-col gap-5 my-15 items-center justify-center'>
+    <div className='flex flex-col gap-5 my-10 md:my-15 items-center justify-center'>
         <div className=' h-auto flex items-center justify-center w-full'>
-      <div className='flex flex-col p-5 md:p-10 items-center gap-10 w-[80%] bg-[#09090B] relative'>
+      <div className='flex flex-col p-5 md:p-10 items-center gap-10 w-[90%] md:w-[80%] bg-[#09090B] relative'>
       <div className="absolute inset-0 w-full h-full">
             <img src="/gridLines.svg" alt="" className="w-full h-full object-cover" />    
         </div>
@@ -23,7 +23,7 @@ const OracleInfo = () => {
         <img src="/oracleInfo.svg" alt="Oracles" className='z-10' />
       </div>
     </div>
-    <div className='bg-[#09090B] w-[80%] rounded-xl h-auto flex flex-col lg:flex-row items-center justify-center p-6 gap-4 text-center lg:text-left'>
+    <div className='bg-[#09090B] w-[90%] md:w-[80%] rounded-xl h-auto flex flex-col lg:flex-row items-center justify-center p-6 gap-4 text-center lg:text-left'>
     <div className='flex flex-col gap-3 flex-1'>
       <div className='text-xl font-bold'>Building <span className='text-[#FFE000]'>a New Data Economy.</span> </div>
       <div className='text-xs text-[#C0C3CB] '>Build custom dashboards for free, deploy oracles from $99/month.</div>
