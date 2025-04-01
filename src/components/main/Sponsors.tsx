@@ -7,10 +7,10 @@ const Sponsors = () => {
 
   return (
     <div className="flex relative w-full items-center justify-center md:border-b-2 border-[#111827] mt-8 md:mt-0">
-      <div className="hidden lg:flex absolute -bottom-1 left-[3.7vw] translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
+      <div className="hidden lg:flex absolute -bottom-1 left-[4vw] large-screen-bottom-left translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -bottom-1 right-[3.7vw] translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
+      <div className="hidden lg:flex absolute -bottom-1 right-[4vw] large-screen-bottom-right translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
         <GoPlus />
       </div>
       <div className="flex relative max-w-[90vw] overflow-hidden ">

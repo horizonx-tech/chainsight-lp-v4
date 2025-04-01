@@ -3,13 +3,13 @@ import { IoMdArrowRoundForward } from "react-icons/io";
 
 const OracleInfo = () => {
   return (
-    <div className='flex flex-col gap-5 my-10 md:my-15 items-center justify-center'>
+    <div className='flex flex-col gap-5 my-10 md:my-15 items-center justify-center rounded-xl'>
         <div className=' h-auto flex items-center justify-center w-full'>
-      <div className='flex flex-col p-5 md:p-10 items-center gap-10 w-[90%] md:w-[80%] bg-[#09090B] relative'>
+      <div className='flex flex-col p-5 md:p-10 items-center gap-10 w-[90%] md:w-[80%] bg-[#09090B]  rounded-xl relative'>
       <div className="absolute inset-0 w-full h-full">
             <img src="/gridLines.svg" alt="" className="w-full h-full object-cover" />    
         </div>
-        <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 w-full h-full p-2">
             <img src="/gridLines1.svg" alt="" className="w-full h-full object-cover" />  
         </div>
         <div className="absolute inset-0 w-full h-full">

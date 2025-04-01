@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -8,29 +8,22 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #000000;
-
+  width: '100vw';
+  max-width: 100%;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-}
+} */
 
-body {
-  margin: 0;
-  background-color: var(--background-color);
-  min-height: 100%;
-  min-width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: sans-serif;
+html{
+  background-color: #000000;
+  width: '100vw';
+  max-width: 100%;
+  color: white;
+  overflow-x: hidden;
 }
-
-h1 {
-  font-size: 4em;
-}
-
 .glow-effect {
   background: radial-gradient(
     ellipse 50% 80% at 20% 40%,
@@ -46,30 +39,17 @@ h1 {
   pointer-events: none;
 }
 
-@layer utilities {
-  .animate-loop-scroll {
-    animation: loop-scroll 50s linear infinite;
+@media (min-width: 2200px) {
+  .large-screen-left {
+    left: 4.3vw !important;
   }
-
-  @keyframes loop-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
+  .large-screen-right {
+    right: 4.3vw !important;
   }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+  .large-screen-bottom-left {
+    left: 4.3vw !important;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  .large-screen-bottom-right {
+    right: 4.3vw !important;
   }
 }

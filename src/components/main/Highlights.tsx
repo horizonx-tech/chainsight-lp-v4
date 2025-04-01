@@ -40,12 +40,12 @@ const Highlights = () => {
                           className={`relative w-full 
                               ${index % 2 === 0 ? 'bg-[#020202]' : 'bg-[#0F0F0F]'} 
                               border border-[#2E2E2E] 
-                              h-[400px] 
+                              h-[350px] 
                               flex 
                               flex-col 
                               items-center 
                               justify-start 
-                              py-8 
+                              py-4
                               px-4 
                               text-center 
                               sm:text-left`}
@@ -64,8 +64,8 @@ const Highlights = () => {
                                       className="mt-4 max-w-full max-h-[200px] object-contain" 
                                   />
                               </div>
-                              <div className="flex-2/5 flex flex-col w-[90%] sm:items-start justify-start text-left sm:text-left gap-[6px]">
-                                  <div className="text-[20px] text-left font-bold font-sans tracking-tighter">
+                              <div className="flex-2/5 flex flex-col w-[90%] sm:items-start justify-start text-left sm:text-left gap-[4px]">
+                                  <div className="text-[20px] text-left font-bold font-sans tracking-tighter text-white">
                                       {feature.title}
                                   </div>
                                   <div className="text-xs text-left font-sans font-semibold text-[#838383]">
