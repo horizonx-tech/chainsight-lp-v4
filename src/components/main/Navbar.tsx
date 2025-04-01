@@ -58,8 +58,8 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Button variant="primary" size="lg" className="hidden lg:flex gap-1 p-2 py-3 text-xs">
-            <MdOutlineArrowOutward size={20} className="" />
+          <Button variant="primary" size="lg" className="hidden lg:flex items-center justify-center gap-1 p-2 py-3 text-xs">
+            <MdOutlineArrowOutward size={20} className="mt-0.5" />
             Launch App
           </Button>
 

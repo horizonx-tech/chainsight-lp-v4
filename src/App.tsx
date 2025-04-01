@@ -14,7 +14,7 @@ import Updates from "./components/main/Updates";
 
 function App() {
   return (
-    <div className="relative flex items-center justify-center max-w-screen bg-[#00000]">
+    <div className="relative flex items-center justify-center bg-[#00000]" >
       <div className="hidden lg:flex absolute bg-transparent h-full w-[90vw] border-x-2 border-[#111827]"></div>
       <div className="relative">
         <Navbar/>

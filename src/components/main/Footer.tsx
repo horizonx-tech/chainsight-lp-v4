@@ -4,12 +4,10 @@ const Footer = () => {
   return (
     <div className="absolute left-0 right-0  w-full flex justify-center">
       <div className="w-full" style={{backgroundColor: theme.colors.background.secondary}}>
-        <div className="p-15 flex flex-col gap-14 sm:gap-8 px-4 sm:px-15">
+        <div className="p-15 flex flex-col items-center md:items-start gap-14 sm:gap-8 px-4 sm:px-15">
         <div className="w-[122px] h-[18px]">
               <img src="/logo.svg" alt="ChainSight"/>
         </div>
-          
-          {/* Company Links */}
           <div className="flex flex-col sm:flex-row gap-4 text-lg sm:text-sm text-[#A1A1AA]">
             <div className="font-bold flex items-center justify-center" style={{ color: theme.colors.text.primary }}>Company</div>
             <div className="flex flex-col items-center justify-center sm:flex-row gap-4">
