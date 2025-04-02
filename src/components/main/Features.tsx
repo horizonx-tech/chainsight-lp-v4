@@ -74,7 +74,13 @@ const Features = () => {
                                 With single block finality and unrivalled scalability, Tendermint Consensus enables Kava to support the transaction needs of thousands of protocols and millions of users. With single block finality and unrivalled scalability, Tendermint Consensus enables Kava to support the transaction needs of thousands of protocols and millions of users,Tendermint Consensus enables Kava to support the transaction needs of thousands of protocols and millions of users.
                             </div>
                         </div>
-                        <img src="/ellipse.svg" alt="" />
+                        <img 
+                          src="/ellipse.webp" 
+                          alt="Ellipse graphic" 
+                          loading="lazy" 
+                          width="500" 
+                          height="300"
+                        />
                     </div>
                 </div>
             </div>
