@@ -20,7 +20,7 @@ const OracleInfo = () => {
             <p className='text-[#FAFAFA] text-xs max-w-[90%] md:max-w-[60%] text-left md:text-center font-extralight'>You can do everything you need in a couple of minutes. You can do everything you need in a couple of minutes.</p>
             <button className='bg-[#FAFAFA] text-[#27272A] flex items-center justify-center text-xs gap-1.5 h-6 p-4 rounded-lg'>Launch Application <IoMdArrowRoundForward/>  </button>
         </div>
-        <img src="/oracleInfo.webp" alt="Oracles" className='z-10' />
+        <img src="/oracleInfo.webp" alt="Oracles" className='z-10' loading="lazy"/>
       </div>
     </div>
     <div className='bg-[#09090B] w-[90%] md:w-[80%] rounded-xl h-auto flex flex-col lg:flex-row items-center justify-center p-6 gap-4 text-center lg:text-left'>

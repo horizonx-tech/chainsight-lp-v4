@@ -24,7 +24,7 @@ const Hero = () => {
       </div>
       <div className="flex flex-col min-h-screen items-center justify-center font-sans gap-10 md:gap-12 px-4 md:px-10 lg:px-12 mx-auto max-w-[2000px]">
         <div className="w-full flex sm:hidden items-center justify-center">
-          <img src="/animation2.svg" alt="animation" className="w-full"/>
+          <img src="/animation2.svg" alt="animation" className="w-full" loading="lazy"/>
         </div>
         <div className="flex flex-col items-start px-4 sm:px-0 sm:items-center justify-center text-center w-full gap-3 sm:gap-0 max-w-4xl pt-4 md:pt-7">
           <div 
@@ -73,6 +73,7 @@ const Hero = () => {
             src="/animation.svg" 
             alt="Animation" 
             className="w-full h-full object-contain"
+            loading="lazy"
           />
         </div>
       </div>
