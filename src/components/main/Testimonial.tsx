@@ -11,7 +11,7 @@ const Testimonial = () => {
             </div>
             <div className='text-md md:text-lg text-[#FAFAFA] font-normal '>"Shadcn UI Kit for Figma has completely transformed our design process. It’s incredibly intuitive and saves us so much time. The components are beautifully crafted and customizable.”</div>
           </div>
-          <img src="/export.webp" alt="" className='hidden lg:flex items-start justify-end h-70 w-80 rounded-tr-xl absolute right-0 top-0'/>
+          <img src="/export.webp" alt="" className='hidden lg:flex items-start justify-end h-70 w-80 rounded-tr-xl absolute right-0 top-0' loading="lazy"/>
         </div>
     </div>
   )
