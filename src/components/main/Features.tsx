@@ -32,7 +32,7 @@ const Features = () => {
             <div className='flex items-center justify-center'>
                 <div className='bg-[#040507] flex items-center justify-center rounded-xl max-w-[90vw] md:max-w-[80vw] relative'>
                     <div className="absolute inset-0 w-full h-full p-10">
-                        <img src="/databg.svg" alt="" className="w-full h-full object-cover" />
+                        <img src="/databg.webp" alt="" className="w-full h-full object-cover" />
                     </div>
                     <div className='flex flex-col gap-4 items-center justify-center w-[90%] relative z-50'>
                         <h2 className='text-[#FAFAFA] text-xl md:text-2xl w-[90%] mt-5'>Everything You Need for Blockchain Data</h2>
@@ -75,10 +75,10 @@ const Features = () => {
                             </div>
                         </div>
                         <img 
-                          src="/ellipse.webp" 
+                          src="/small.webp" 
                           alt="Ellipse graphic" 
                           loading="lazy" 
-                          width="500" 
+                          width="600" 
                           height="300"
                         />
                     </div>
