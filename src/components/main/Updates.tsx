@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const Updates = () => {
     const [slidePosition, setSlidePosition] = useState(0);
     const [visibleCards, setVisibleCards] = useState(3);
-    const updates=['update1.svg','update1.svg','update1.svg','update1.svg','update1.svg','update1.svg']
+    const updates=['update1.webp','update1.webp','update1.webp','update1.webp','update1.webp','update1.webp']
     const maxLength=updates.length-1;
 
       useEffect(() => {
