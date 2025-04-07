@@ -20,9 +20,9 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
 }) => {
   const variantStyles: Record<Variant, string> = {
-    primary: "bg-[#18181B] rounded-full text-[#FFE000]",
-    secondary: "bg-[#09090B] border border-[#27272A] rounded-md hover:bg-[#27272A]",
-    tertiary: "bg-[#27272A] border border-[#27272A] rounded-md hover:bg-neutral-800",
+    primary: "bg-[#18181B] rounded-full text-[#FFE000] transition-transform duration-200 transition-transform duration-200 active:scale-90 hover:scale-105 transition-transform duration-200 px-4 py-2",
+    secondary: "bg-[#09090B] border border-[#27272A] rounded-md hover:bg-[#27272A] transition-transform duration-200 active:scale-90",
+    tertiary: "bg-[#27272A] border border-[#27272A] rounded-md hover:bg-[#3f3f46] transition-transform duration-200 active:scale-90",
   };
 
   const sizeStyles: Record<Size, string> = {

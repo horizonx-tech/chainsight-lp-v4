@@ -23,7 +23,7 @@ const Navbar = () => {
     }),
   };
 
-  const menuItems = ["Resources", "Ecosystem", "Product", "Docs", "Contact Us"];
+  const menuItems = ["Resources", "Ecosystem", "Product", "Docs", "Blogs", "Contact Us"];
 
   return (
     <div className="relative top-7 left-0 w-full mb-20 sm:mb-0 flex justify-center z-50">
@@ -44,12 +44,12 @@ const Navbar = () => {
             className="hidden lg:flex bg-[#18181B] text-[#FAFAFA] rounded-full" 
             style={{ color: theme.colors.text.primary }}
           >
-            <div className="flex p-1.5 font-semibold text-xs font-sans">
+            <div className="flex p-1.5 font-semibold text-xs font-sans ">
               {menuItems.map((item, index) => (
                 <div
                   key={index}
-                  className={`my-3 px-3 h-2 flex items-center justify-center ${
-                    index < 4 ? "border-r-2 border-[#27272A]" : ""
+                  className={`my-3 px-3 h-2 flex items-center justify-center hover:text-[#FFE000] hover:scale-110 hover:cursor-pointer ${
+                    index < 5 ? "border-r-2 border-[#27272A]" : ""
                   }`}
                 >
                   {item}
@@ -65,7 +65,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Toggle */}
           <div className="lg:hidden cursor-pointer z-50" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <AiOutlineClose size={30} /> : <RxHamburgerMenu size={30} />}
+            {isOpen ? <></> : <RxHamburgerMenu size={30} />}
           </div>
         </div>
       </div>

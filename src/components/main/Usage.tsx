@@ -82,7 +82,7 @@ const Usage = () => {
               >
                 {click === index && (
                   <motion.div
-                    layoutId="activeTab"
+                    layoutId="activeTab4"
                     className="absolute inset-0 bg-[#212121] text-[#FFE000] rounded-full"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
@@ -112,7 +112,7 @@ const Usage = () => {
         
         <div className="w-full overflow-hidden">
         <motion.div 
-        className='flex gap-7 lg:gap-4 '
+        className='flex gap-7 xl:gap-4 '
         animate={{ x: `${slidePosition}%` }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         onTouchStart={handleTouchStart}

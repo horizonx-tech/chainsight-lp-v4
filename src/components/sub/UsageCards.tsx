@@ -15,7 +15,7 @@ const UsageCards = ({variant}:{variant:'primary'|'secondary'|'tertiary'|'quartin
         <div className='flex gap-2'><img src="/indexing.svg" alt="" /> <span className="mt-2 text-xl w-[60%]">Building Oracles</span></div>
         <div className='flex flex-col gap-4'>
             <p className='text-[#FFFFFF] text-sm md:text-md'>“Untitled has saved us thousands of hours of work. We’re able to spin up projects faster.”</p>
-            <div className='flex justify-between items-center'>
+            <div className='flex justify-between items-center hover:underline hover:underline-offset-4'>
                 <div className="text-xs">Read Case Study</div>
                 <div><MdArrowOutward/></div>
             </div>
