@@ -63,7 +63,7 @@ const Connect = () => {
           </div>
         </div>
 
-        <button className="max-w-md p-2 px-4 h-10 rounded-full bg-[#355DEA] text-sm sm:text-base">
+        <button className="max-w-md p-2 px-4 h-10 rounded-full bg-[#355DEA] text-sm sm:text-base hover:scale-105 active:scale-95 transition-transform duration-200">
           Send it over!
         </button>
       </div>

@@ -31,7 +31,7 @@ const Hero = () => {
             className="mb-1 text-base md:text-[20px]" 
             style={{color:theme.colors.text.secondary}}
           >
-            The Trustless Data Layer
+            The Permissionless Data Layer
           </div>
           <h2 
             className="text-3xl sm:text-5xl text-left sm:text-center md:text-5xl font-normal leading-tight md:leading-[1.3] inline-block mb-0 -mt-1 md:-mt-2 max-w-full" 
@@ -61,9 +61,9 @@ const Hero = () => {
             <Button 
               variant="tertiary" 
               size="sm" 
-              className="flex gap-2 text-xs md:text-sm text-[#FAFAFA]"
+              className="flex gap-2 text-xs md:text-sm text-[#FAFAFA] "
             >
-              Build Oracle
+              Oracle Builder
               <IoMdArrowRoundForward size={15} className="mt-1 md:mt-1.5"/> 
             </Button>
           </div>

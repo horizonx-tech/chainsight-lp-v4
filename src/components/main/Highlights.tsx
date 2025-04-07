@@ -1,33 +1,34 @@
 const Highlights = () => {
   const features = [
-      {
-        icon: "security.svg",
-        title: 'Security',
-        description: '+300 Million USD gets lost every month on Web 3.0, we can help prevent that.',
-        bgClass: 'bg-[#1A1A1A]',
-        iconColor: '#FF6B6B'
-      },
+      
       {
         icon: "flexibility.svg",
-        title: 'User-Driven Flexibility',
-        description: 'Things take months, even a year to get completed. But with ChainSight, you can build your oracle in minutes.',
+        title: 'User Driven Composability',
+        description: 'Build your oracle. No coding necessary. Register data from virtually any source. ',
         bgClass: 'bg-[#0E0E0E]',
         iconColor: '#6B7FF6'
       },
       {
         icon: "multichain.svg",
         title: 'Multichain Support',
-        description: 'Chains can be quite limiting if they aren\'t connected. We do that.',
+        description: 'Bring any data onchain. EVM, SVM & more.',
         bgClass: 'bg-[#121212]',
         iconColor: '#4ECDC4'
       },
       {
         icon: "analytics.svg",
-        title: 'Real-time Analytics',
-        description: 'Index Data, Analyze it. Build complex logic and have it made for you.',
+        title: 'Real-Time Analytics ',
+        description: 'Fetch, index, insert logic & sync the data to any network.',
         bgClass: 'bg-[#0C0C0C]',
         iconColor: '#FFD93D'
-      }
+      },
+      {
+        icon: "security.svg",
+        title: 'Verifiability & Security ',
+        description: 'With DKG, Chain-Key cryptography & zkTLS.',
+        bgClass: 'bg-[#1A1A1A]',
+        iconColor: '#FF6B6B'
+      },
   ];
 
   return (
@@ -64,7 +65,7 @@ const Highlights = () => {
                                       className="mt-4 max-w-full max-h-[200px] object-contain" 
                                   />
                               </div>
-                              <div className="flex-2/5 flex flex-col w-[90%] sm:items-start justify-start text-left sm:text-left gap-[4px]">
+                              <div className="flex-2/5 flex flex-col w-[90%] sm:items-start justify-start text-left sm:text-left gap-[10px]">
                                   <div className="text-[20px] text-left font-bold font-sans tracking-tighter text-white">
                                       {feature.title}
                                   </div>

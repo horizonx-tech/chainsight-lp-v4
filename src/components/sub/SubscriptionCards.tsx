@@ -11,7 +11,7 @@ interface SubscriptionCardsProps {
 
 const SubscriptionCards = ({variant, title, content, monthlySubscription, features}: SubscriptionCardsProps) => {
    return (
-     <div className={`relative max-w-[90vw] sm:w-[20rem] h-[30rem] border ${variant=="primary"?"border-[#27272A]":"border-white"} bg-[#09090B] rounded-lg overflow-hidden`}>
+     <div className={`relative xs:w-[90vw] sm:w-[50vw] lg:max-w-[90vw] h-[30rem] border ${variant=="primary"?"border-[#27272A]":"border-white"} bg-[#09090B] rounded-lg overflow-hidden`}>
        <div className={`${variant=="secondary"?"flex":"hidden"} items-start absolute top-0 left-0 w-full h-24 z-10`}>
          <div className={`absolute top-0 left-1/2 transform -translate-x-1/2 w-[20vw] h-10 bg-[#c0ae3f] blur-[50px]  rounded-full`}></div>
        </div>
@@ -24,7 +24,7 @@ const SubscriptionCards = ({variant, title, content, monthlySubscription, featur
              </h2>
              <p className="text-[#A1A1AA] text-xs">{content}</p>
              <h2 className="text-white text-3xl">${monthlySubscription}<span className="text-[#A1A1AA] text-xs">/month</span></h2>
-             <button className={`${variant=="primary"?"bg-[#27272A] text-[#FAFAFA]":"bg-[#FAFAFA] text-[#27272A]"} text-xs w-full rounded-lg h-10 mb-3`}>Subscribe</button>
+             <button className={`${variant=="primary"?"bg-[#27272A] text-[#FAFAFA] hover:bg-[#3f3f46]":"bg-[#FAFAFA] text-[#27272A] hover:hover:bg-[#cecdcd] "} text-xs w-full rounded-lg h-10 mb-3 active:scale-95 `}>Subscribe</button>
              <div className="flex flex-col gap-3 w-full">
                  <div className="text-[#FAFAFA] text-xs">What's included:</div>
                  <div className="flex flex-col gap-4">

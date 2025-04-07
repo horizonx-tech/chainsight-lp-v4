@@ -57,7 +57,7 @@ const Updates = () => {
             >
                 {updates.map((update, index) => (
                 <div key={index} className="gap-2">
-                    <img src={`${update}`} alt="" className="w-3xl md:w-5xl md:h-60" />
+                    <img src={`${update}`} alt="" className="w-3xl md:w-5xl md:h-60 rounded-md" />
                 </div>
                 ))}
             </motion.div>
