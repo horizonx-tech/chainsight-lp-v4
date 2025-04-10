@@ -3,28 +3,38 @@ import { IoMdArrowRoundForward } from "react-icons/io";
 import { MdArrowOutward } from "react-icons/md";
 import Button from "../sub/Button";
 import { GoPlus } from "react-icons/go";
+import Lottie from "lottie-react";
+import animationData from "../../assets/animation.json";
+import animationData2 from "../../assets/animation2.json";
 
 const Hero = () => {
   return (
     <section className="w-full relative lg:border-y-2 border-[#111827]"  style={{ width: '100vw', maxWidth: '100%' }}>
       <div className="absolute inset-0 pointer-events-none w-full" >
-      <div className="hidden lg:flex absolute -top-1 left-[4vw] large-screen-left  -translate-y-3 text-white font-extralight text-xl md:text-2xl lg:text-3xl">
+      <div className="hidden lg:flex absolute -top-1 left-[3.8vw] large-screen-left  -translate-y-3 text-white font-extralight text-xl md:text-2xl lg:text-3xl" >
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -top-1 right-[4vw]  large-screen-right -translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
+      <div className="hidden lg:flex absolute -top-1 right-[3.8vw]  large-screen-right -translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -bottom-1 left-[4vw] large-screen-bottom-left translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
+      <div className="hidden lg:flex absolute -bottom-1 left-[3.8vw] large-screen-bottom-left translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -bottom-1 right-[4vw] large-screen-bottom-right translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
+      <div className="hidden lg:flex absolute -bottom-1 right-[3.8vw] large-screen-bottom-right translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
         <GoPlus />
       </div>
 
       </div>
-      <div className="flex flex-col min-h-screen items-center justify-center font-sans gap-10 md:gap-12 px-4 md:px-10 lg:px-12 mx-auto max-w-[2000px]">
+      <div className="flex flex-col min-h-screen items-center justify-center font-sans gap-10 md:gap-12 px-4 md:px-10 lg:px-12 mx-auto w-full">
         <div className="w-full flex sm:hidden items-center justify-center">
-          <img src="/animation2.svg" alt="animation" className="w-full" loading="lazy"/>
+          <Lottie 
+            animationData={animationData2} 
+            loop 
+            autoplay 
+            className="w-full"
+            style={{ transform: "scale(1)", transformOrigin: "center" }}
+
+          />
         </div>
         <div className="flex flex-col items-start px-4 sm:px-0 sm:items-center justify-center text-center w-full gap-3 sm:gap-0 max-w-4xl pt-4 md:pt-7">
           <div 
@@ -49,31 +59,33 @@ const Hero = () => {
           >
             Securely register data from any source, verify its integrity & deploy it to any network.
           </div>
-          <div className="flex gap-3 md:gap-[15px] mt-4 md:mt-6">
+          <div className="flex gap-3 md:gap-[15px] mt-4 md:mt-6 ">
             <Button 
               variant="secondary" 
               size="sm" 
-              className="flex gap-2 text-xs md:text-sm text-[#FAFAFA]"
+              className="flex gap-2 text-xs md:text-sm text-[#FAFAFA] justify-center items-center"
             >
               View Docs
-              <MdArrowOutward size={15} className="mt-0.5 md:mt-1"/> 
+              <MdArrowOutward size={15} className=""/> 
             </Button>
             <Button 
               variant="tertiary" 
               size="sm" 
-              className="flex gap-2 text-xs md:text-sm text-[#FAFAFA] "
+              className="flex gap-2 text-xs md:text-sm text-[#FAFAFA]  justify-center items-center "
             >
               Oracle Builder
-              <IoMdArrowRoundForward size={15} className="mt-1 md:mt-1.5"/> 
+              <IoMdArrowRoundForward size={15} className=""/> 
             </Button>
           </div>
         </div>
-        <div className="hidden sm:flex w-full max-w-[1178px] h-auto md:h-[215px] mt-4 md:mt-[10px] px-4 md:px-0">
-          <img 
-            src="/animation.svg" 
-            alt="Animation" 
-            className="w-full h-full object-contain"
-            loading="lazy"
+        <div className="hidden max-w-[80vw] sm:flex w-full h-auto md:h-[215px] mt-4 md:mt-[10px] px-0">
+          <Lottie 
+            animationData={animationData} 
+            loop 
+            autoplay 
+            className="w-full h-full"
+            style={{ transform: "scale(1.3)", transformOrigin: "center" }}
+
           />
         </div>
       </div>

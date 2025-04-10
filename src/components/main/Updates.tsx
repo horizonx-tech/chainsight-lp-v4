@@ -12,9 +12,9 @@ const Updates = () => {
       useEffect(() => {
         const handleResize = () => {
           if (window.innerWidth < 640) {
-            setVisibleCards(2);
+            setVisibleCards(1);
           } else if (window.innerWidth < 1024) {
-            setVisibleCards(3);
+            setVisibleCards(2);
           }
           else if (window.innerWidth < 2000) {
             setVisibleCards(4);
@@ -29,7 +29,7 @@ const Updates = () => {
       }, []);
   return (
     <div className="  flex items-center justify-center">
-      <div className="bg-[#09090B] max-w-[90vw] md:max-w-[80vw] rounded-xl">
+      <div className="bg-[#09090B] max-w-[95vw] md:max-w-[80vw]  xl:max-w-screen-lg rounded-xl">
       <div className="flex flex-col items-center gap-4 w-full p-5">
         <div className="flex justify-between items-center w-full">
         <h2 className="text-2xl text-[#FAFAFA]">Our Updates</h2>
@@ -57,7 +57,7 @@ const Updates = () => {
             >
                 {updates.map((update, index) => (
                 <div key={index} className="gap-2">
-                    <img src={`${update}`} alt="" className="w-3xl md:w-5xl md:h-60 rounded-md" />
+                    <img src={`${update}`} alt="" className="w-[] h-40 md:w-5xl md:h-60 rounded-md" />
                 </div>
                 ))}
             </motion.div>
