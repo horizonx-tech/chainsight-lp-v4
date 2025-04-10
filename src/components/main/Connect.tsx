@@ -5,7 +5,7 @@ const Connect = () => {
   const [click, setClick] = useState(0);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-6 my-10 px-4 sm:px-8 md:px-16 lg:px-20 w-full">
+    <div id="Contact_Us" className="flex flex-col items-center justify-center gap-6 my-10 px-4 sm:px-8 md:px-16 lg:px-20 w-full">
       <div className="flex flex-col gap-1 items-center text-center w-full max-w-md">
         <h3 className="text-[#FAFAFA] text-xl font-bold">Let’s connect</h3>
         <p className="text-[#71717A] text-xs sm:text-sm">

@@ -33,7 +33,7 @@ const Highlights = () => {
 
   return (
       <div className="flex items-center justify-center px-2 sm:px-4 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full max-w-[90vw] md:max-w-[80vw] border border-[#2E2E2E] my-10 md:my-20 rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full max-w-[90vw] md:max-w-[80vw] xl:max-w-screen-lg border border-[#2E2E2E] my-10 md:my-20 rounded-2xl overflow-hidden">
               {features.map((feature, index) => {
                   return (
                       <div 
@@ -41,7 +41,7 @@ const Highlights = () => {
                           className={`relative w-full 
                               ${index % 2 === 0 ? 'bg-[#020202]' : 'bg-[#0F0F0F]'} 
                               border border-[#2E2E2E] 
-                              h-[350px] 
+                              h-[350px]
                               flex 
                               flex-col 
                               items-center 
@@ -54,18 +54,18 @@ const Highlights = () => {
                           <img 
                               src="/arrow.svg" 
                               alt="arrow" 
-                              className="absolute top-2 right-0 hidden sm:block" 
+                              className="absolute top-2 right-0 block" 
                           />
                           
                           <div className="flex flex-col items-start w-full h-full">
-                              <div className="flex-3/5 flex items-center justify-start w-full mb-4">
+                              <div className="flex-2/3 md:flex-3/5 flex items-end md:items-center md:justify-start w-full mb-6 md:mb-4">
                                   <img 
                                       src={feature.icon} 
                                       alt={feature.icon} 
-                                      className="mt-4 max-w-full max-h-[200px] object-contain" 
+                                      className="mt-4 max-w-full max-h-[300px] md:max-h-[200px] object-contain" 
                                   />
                               </div>
-                              <div className="flex-2/5 flex flex-col w-[90%] sm:items-start justify-start text-left sm:text-left gap-[10px]">
+                              <div className="flex-1/3 md:flex-2/5  flex flex-col w-[90%] sm:items-start justify-start text-left sm:text-left gap-[10px]">
                                   <div className="text-[20px] text-left font-bold font-sans tracking-tighter text-white">
                                       {feature.title}
                                   </div>
