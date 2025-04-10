@@ -45,9 +45,6 @@ const Usage = () => {
       } else if(window.innerWidth < 1900){
         setVisibleCards(3);
       }
-      else{
-        setVisibleCards(4);
-      }
     };
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -57,12 +54,12 @@ const Usage = () => {
   return (
     <div className="w-full flex items-center justify-center mb-10">
       <div className="flex flex-col gap-4 items-start justify-center bg-[#09090B] rounded-xl max-w-[90vw] md:w-[80%] xl:max-w-screen-lg p-5">
-        <h2 className="text-xl text-white">Who can use ChainSight?</h2>
+        <h2 className="text-xl text-white">Use Cases of ChainSight</h2>
         <div className='flex justify-between w-full'>
           <div>
 
           </div>
-          <div className={visibleCards!=4?`hidden md:flex gap-3 w-[25%] md:w-[10%] mt-2`:`hidden`}>
+          <div className={`hidden md:flex gap-3 w-[25%] md:w-[10%] mt-2`}>
             <div 
               className={`w-12 h-6 md:w-7 md:h-6 flex rounded-sm items-center justify-center bg-[#27272A] cursor-pointer hover:bg-[#3f3f46] ${slidePosition >= 0 ? 'opacity-50' : 'opacity-100'}`}
               onClick={() => handleBackward({setSlidePosition, visibleCards})}

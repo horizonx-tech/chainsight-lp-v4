@@ -2,13 +2,14 @@ import {useState} from 'react'
 import {motion} from "framer-motion"
 import SubscriptionCards from '../sub/SubscriptionCards';
 import Button from '../sub/Button';
+import theme from '../../constants/theme';
 const Subscription = () => {
   const [click, setClick] = useState(0);
   console.log("click",click)
   return (
     <div className='flex flex-col items-center gap-5 justify-center my-5 md:my-10 mt-15 px-4'>
       <div className='flex flex-col gap-2 items-center justify-center text-center'>
-        <h2 className='text-2xl text-[#FAFAFA] font-semibold'>Portal Subscription Plans</h2>
+        <h2 className='text-2xl text-[#FAFAFA] font-semibold' style={{color: theme.colors.text.secondary}}>Portal Subscription Plans</h2>
         <p className='text-[#A1A1AA] text-xs font-extralight max-w-lg'>Build unlimited data pipelines, only pay for what you need with flexibility & efficiency.</p>
       </div>
       <motion.div
