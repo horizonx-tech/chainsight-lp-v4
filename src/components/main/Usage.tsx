@@ -45,9 +45,6 @@ const Usage = () => {
       } else if(window.innerWidth < 1900){
         setVisibleCards(3);
       }
-      else{
-        setVisibleCards(4);
-      }
     };
     handleResize();
     window.addEventListener('resize', handleResize);
