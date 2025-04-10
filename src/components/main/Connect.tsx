@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm, ValidationError } from "@formspree/react";
 
-const formId = import.meta.env.VITE_FORMSPREE_FORM_ID;
+const formId = import.meta.env.VITE_FORMSPREE_FORM_ID || "123xyz";
 
 const Connect = () => {
   const [state, handleSubmit] = useForm(formId);
