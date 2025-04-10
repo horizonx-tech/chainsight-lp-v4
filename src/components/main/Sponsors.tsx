@@ -1,6 +1,6 @@
 import { GoPlus } from "react-icons/go";
 import { motion } from "framer-motion";
-import React, { useEffect, useState, useMemo} from "react";
+import { useEffect, useState, useMemo} from "react";
 
 const Sponsors = () => {
   const baseSponsors = useMemo(
