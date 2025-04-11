@@ -1,8 +1,10 @@
 import theme from "../../constants/theme";
-
+import { useNavigate } from 'react-router-dom';
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="absolute left-0 right-0  w-full flex justify-center">
+    <div className="absolute left-0 right-0 w-full flex justify-center">
       <div className="w-full" style={{backgroundColor: theme.colors.background.secondary}}>
         <div className="p-15 flex flex-col items-center md:items-start gap-14 sm:gap-8 px-4 sm:px-15">
         <div className="w-[122px] h-[18px]">
@@ -11,7 +13,8 @@ const Footer = () => {
           <div className="flex flex-col sm:flex-row gap-4 text-lg sm:text-sm text-[#A1A1AA]">
             <div className="font-bold flex items-center justify-center" style={{ color: theme.colors.text.primary }}>Company</div>
             <div className="flex flex-col items-center justify-center sm:flex-row gap-4">
-              {/* <div className="hover:text-[#fff]">About Us</div>
+            <div className="hover:text-[#fff] cursor-pointer" onClick={() => navigate('/soon')}>About Us</div>
+              {/* 
               <div className="hover:text-[#fff]">Blog</div>
               <div className="hover:text-[#fff]">Careers</div>
               <div className="hover:text-[#fff]">Documents</div> */}

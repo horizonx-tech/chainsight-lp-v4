@@ -11,13 +11,13 @@ export async function GET() {
 }
 
 // "username": "ChainSight_"
-const USER_ID = "1654772598578765824";
+export const USER_ID = "1654772598578765824";
 // 2 days in milliseconds
 const CACHE_INTERVAL = 60 * 60 * 24 * 2 * 1000; 
 const cacheKey = (timeunit: number, userId: string) =>
   `x/posts/${timeunit}/${userId}`;
 
-const getTopPosts = async (
+export const getTopPosts = async (
   timeunit: number,
   userId: string
 ): Promise<Tweet[]> => {
@@ -31,7 +31,7 @@ const getTopPosts = async (
 };
 
 // ------------- Twitter API -------------
-const X_API_BEARER_TOKEN = process.env.X_API_BEARER_TOKEN;
+export const X_API_BEARER_TOKEN = process.env.X_API_BEARER_TOKEN;
 
 type Tweet = {
   id: string;

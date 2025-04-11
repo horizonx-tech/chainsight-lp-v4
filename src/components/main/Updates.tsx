@@ -3,9 +3,7 @@ import { IoMdArrowRoundForward } from "react-icons/io";
 import { IoArrowBackSharp } from "react-icons/io5";
 import { handleBackward, handleForward } from '../../utils/functionalities';
 import { motion } from "framer-motion";
-import { mockTweets } from '../../constants/mockTweets';
-import { TwitterApiResponse, Tweet} from "../../utils/types"
-
+import { Tweet, TwitterApiResponse, Media, RawTweet } from "../../utils/types";
 const Updates = () => {
   const [slidePosition, setSlidePosition] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
@@ -23,45 +21,70 @@ const Updates = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    const fetchTweets = async () => {
-      try {
-        const cachedData = localStorage.getItem("cachedTweets");
-        const cachedTime = localStorage.getItem("cachedTweetsTime");
-        const now = new Date().getTime();
-        if (cachedData && cachedTime && now - parseInt(cachedTime) < 24 * 60 * 60 * 1000) {
-          const parsedData: Tweet[] = JSON.parse(cachedData);
-          setTweets(parsedData);
-          return;
+  
+
+useEffect(() => {
+  const fetchTweets = async () => {
+    try {
+      // const res = await fetch("https://your-api-url.com/api/x/posts");
+      // const result: TwitterApiResponse = await res.json();
+
+      // For now using mocked inline data with the expected structure:
+      const result: TwitterApiResponse = {
+        data: [
+          {
+            id: "1910458394034524257",
+            text: "Our MultiOracle Aggregator is also tariff free✨ https://t.co/1X3JYARfJO",
+            created_at: "2025-04-10T22:22:30.000Z",
+            attachments: {
+              media_keys: ["13_1910458297536090112"]
+            }
+          },
+          {
+            id: "1910325648981188793",
+            text: "No tariffs on Portal V1. ✨ https://t.co/T333KJbk2L",
+            created_at: "2025-04-10T13:35:01.000Z"
+          }
+        ],
+        includes: {
+          media: [
+            {
+              media_key: "13_1910458297536090112",
+              type: "video",
+              preview_image_url: "https://pbs.twimg.com/amplify_video_thumb/1910458297536090112/img/bDrrUKJ_VdTlBgW-.jpg"
+            }
+          ]
         }
-        const res = await fetch("https://chainsight-lp-v4.vercel.app/api/x/posts");
-        const result: TwitterApiResponse = await res.json();
-        const tweets = result.data;
-        const media = result.includes?.media || [];
-  
-        const enrichedTweets: Tweet[] = tweets.map((tweet) => {
-          const mediaKeys = tweet.attachments?.media_keys || [];
-          const attachedMedia = media.filter((m) => mediaKeys.includes(m.media_key));
-          return {
-            ...tweet,
-            media: attachedMedia.map((m) => ({
-              type: m.type,
-              url: m.url,
-            })),
-          };
-        });
-        localStorage.setItem("cachedTweets", JSON.stringify(enrichedTweets));
-        localStorage.setItem("cachedTweetsTime", now.toString());
-        setTweets(enrichedTweets);
-      } catch (err) {
-        console.error("Error fetching tweets:", err);
-        setTweets(mockTweets);
-      }
-    };
-  
-    fetchTweets();
-  }, []);
-  
+      };
+
+      const mediaMap = new Map<string, Media>();
+      result.includes?.media?.forEach((m) => {
+        mediaMap.set(m.media_key, m);
+      });
+
+      const normalizedTweets: Tweet[] = result.data.map((tweet: RawTweet) => {
+        const media = tweet.attachments?.media_keys
+          ?.map((key) => mediaMap.get(key))
+          .filter((m): m is Media => !!m);
+
+        return {
+          id: tweet.id,
+          created_at: tweet.created_at,
+          text: tweet.text,
+          edit_history_tweet_ids: [], 
+          media
+        };
+      });
+
+      setTweets(normalizedTweets);
+    } catch (err) {
+      console.error("Error fetching tweets:", err);
+      // setTweets(mockTweets); // fallback
+    }
+  };
+
+  fetchTweets();
+}, []);
 
   const maxLength = tweets.length - 1;
 
@@ -117,16 +140,20 @@ const Updates = () => {
                       </div>
                     </div>
                     <p className="text-sm leading-snug mb-2">{tweet.text}</p>
-                    {tweet.media && tweet.media.map((m, i) => (
-                        m.type === "photo" ? (
-                          <img key={i} src={m.url} alt="tweet media" className="rounded w-30 h-30 mt-2" />
-                        ) : m.type === "video" ? (
+                    {tweet.media?.map((m, i) => {
+                      if (m.type === "photo" && m.url) {
+                        return <img key={i} src={m.url} alt="tweet media" className="rounded w-30 h-30 mt-2" />;
+                      } else if (m.type === "video" && m.url) {
+                        return (
                           <video key={i} controls className="rounded mt-2">
                             <source src={m.url} type="video/mp4" />
                             Your browser does not support the video tag.
                           </video>
-                        ) : null
-                    ))}
+                        );
+                      }
+                      return null;
+                    })}
+
                   </div>
                   <span className="text-gray-400 text-[11px] mt-2">{new Date(tweet.created_at).toLocaleString()}</span> 
                 </div>

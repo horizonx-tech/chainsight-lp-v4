@@ -1,8 +1,10 @@
 export type Media = {
   media_key: string;
   type: 'photo' | 'video';
-  url: string;
+  url?: string;
+  preview_image_url?: string;
 };
+
 
 export type RawTweet = {
   id: string;
@@ -20,10 +22,16 @@ export type TwitterApiResponse = {
   };
 };
 
-export type Tweet = RawTweet & {
+export type Tweet = {
+  id: string;
+  created_at: string;
+  text: string;
+  edit_history_tweet_ids: string[];
   media?: {
-    type: 'photo' | 'video';
-    url: string;
+    media_key: string;
+    type: string;
+    url?: string;
+    preview_image_url?: string;
   }[];
 };
 

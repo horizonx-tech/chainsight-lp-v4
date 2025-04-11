@@ -5,7 +5,6 @@ import Button from '../sub/Button';
 import theme from '../../constants/theme';
 const Subscription = () => {
   const [click, setClick] = useState(0);
-  console.log("click",click)
   return (
     <div className='flex flex-col items-center gap-5 justify-center my-5 md:my-10 mt-15 px-4' id="subscription">
       <div className='flex flex-col gap-2 items-center justify-center text-center'>
@@ -43,12 +42,10 @@ const Subscription = () => {
     );
   })}
 </motion.div>
-
-
       <div className='flex flex-col lg:flex-row items-center justify-center gap-4 w-full max-w-4xl'>
         <SubscriptionCards variant="primary" title='Basic' content={`Always free, limited functionalities.`} monthlySubscription={0} features={["$0 / month","No monthly credits included","Dashboard features access"]} yearly={click}/>
-        <SubscriptionCards variant="secondary" title='Plus' content="Unlock advanced features with extra credits." monthlySubscription={99} features={["$99 / month (Annually: $89)","85,000 monthly credits","Index new data from UI","Make oracles from UI"]} yearly={click}/>
-        <SubscriptionCards variant="primary" title='Premium' content="Transform your multi-oracle workflow with enough power." monthlySubscription={999} features={["$999 / month (Annually: $899)","1.65 million monthly credits","Everything in Plus"]} yearly={click}/>
+        <SubscriptionCards variant="secondary" title='Plus' content="Unlock advanced features with extra credits." monthlySubscription={click?89:99} features={["$99 / month (Annually: $89)","85,000 monthly credits","Index new data from UI","Make oracles from UI"]} yearly={click}/>
+        <SubscriptionCards variant="primary" title='Premium' content="Transform your multi-oracle workflow with enough power." monthlySubscription={click?899:999} features={["$999 / month (Annually: $899)","1.65 million monthly credits","Everything in Plus"]} yearly={click}/>
       </div>
       <div className='bg-[#09090B] border border-[#27272A] w-[90vw] sm:w-[50vw] lg:w-full max-w-4xl rounded-xl h-auto flex flex-col lg:flex-row items-start lg:items-center justify-center p-6 gap-4 text-center lg:text-left'>
         <div className='flex flex-col items-start gap-3 flex-1'>
