@@ -1,6 +1,6 @@
 export async function GET() {
-    const yyyyMMdd = new Date().toISOString().split("T")[0].replace(/-/g, "");
-    const posts = await getTopPosts(yyyyMMdd, USER_ID);
+    const timeunit = Math.floor(new Date().getTime() / CACHE_INTERVAL);
+    const posts = await getTopPosts(timeunit, USER_ID);
     return Response.json(posts, {
         status: 200,
         headers: {
@@ -11,13 +11,15 @@ export async function GET() {
 }
 // "username": "ChainSight_"
 const USER_ID = "1654772598578765824";
-const cacheKey = (yyyyMMdd, userId) => `x/posts/${yyyyMMdd}/${userId}`;
-const getTopPosts = async (date, userId) => {
-    const key = cacheKey(date, userId);
+// 2 days in milliseconds
+const CACHE_INTERVAL = 60 * 60 * 24 * 2 * 1000;
+const cacheKey = (timeunit, userId) => `x/posts/${timeunit}/${userId}`;
+const getTopPosts = async (timeunit, userId) => {
+    const key = cacheKey(timeunit, userId);
     const cached = (await getFromCache(key));
     if (cached)
         return cached;
-    const response = await getTweets(USER_ID);
+    const response = await getTweets(userId);
     await saveCache(key, response);
     return response;
 };
