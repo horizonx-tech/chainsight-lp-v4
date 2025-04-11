@@ -8,9 +8,9 @@ import Connect from "./components/main/Connect";
 import Subscription from "./components/main/Subscription";
 import Features from "./components/main/Features";
 import OracleInfo from "./components/main/OracleInfo";
-import Testimonial from "./components/main/Testimonial";
+// import Testimonial from "./components/main/Testimonial";
 import Usage from "./components/main/Usage";
-import Updates from "./components/main/Updates";
+// import Updates from "./components/main/Updates";
 
 function App() {
   return (
@@ -24,10 +24,10 @@ function App() {
         <Features/>
         <OracleInfo/>
         <Usage/>
-        <Testimonial/>
+        {/* <Testimonial/> */}
         <Subscription/>
         <Faq/>
-        <Updates/>
+        {/* <Updates/> */}
         <Connect/>
         <Footer/>
       </div>

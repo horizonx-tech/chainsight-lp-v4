@@ -27,7 +27,19 @@ const SubscriptionCards = ({variant, title, content, monthlySubscription, featur
              <p className="text-[#A1A1AA] text-xs">{content}</p>
              </div>
              <h2 className="text-white text-3xl">${monthlySubscription}<span className="text-[#A1A1AA] text-xs">{yearly?"/month billed yearly":"/month"}</span></h2>
-             <button className={`${variant=="primary"?"bg-[#27272A] text-[#FAFAFA] hover:bg-[#3f3f46]":"bg-[#FAFAFA] text-[#27272A] hover:hover:bg-[#cecdcd] "} text-xs w-full rounded-lg h-10 mb-3 active:scale-95 `}>Subscribe</button>
+             <div className="w-full">
+                    <button
+                    className={`${
+                        variant == "primary"
+                        ? "bg-[#27272A] text-[#FAFAFA] hover:bg-[#3f3f46]"
+                        : "bg-[#FAFAFA] text-[#27272A] hover:hover:bg-[#cecdcd]"
+                    } text-xs w-full rounded-lg h-10 mb-3 active:scale-95`}
+                    onClick={() => window.location.href = "https://v1.chainsight.network/pricing"}
+                    >
+                    Subscribe
+                    </button>
+                </div>
+
              <div className="flex flex-col gap-3 w-full">
                  <div className="text-[#FAFAFA] text-xs">What's included:</div>
                  <div className="flex flex-col gap-4">

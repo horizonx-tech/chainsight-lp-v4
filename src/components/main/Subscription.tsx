@@ -7,7 +7,7 @@ const Subscription = () => {
   const [click, setClick] = useState(0);
   console.log("click",click)
   return (
-    <div className='flex flex-col items-center gap-5 justify-center my-5 md:my-10 mt-15 px-4'>
+    <div className='flex flex-col items-center gap-5 justify-center my-5 md:my-10 mt-15 px-4' id="subscription">
       <div className='flex flex-col gap-2 items-center justify-center text-center'>
         <h2 className='text-2xl text-[#FAFAFA] font-semibold' style={{color: theme.colors.text.secondary}}>Portal Subscription Plans</h2>
         <p className='text-[#A1A1AA] text-xs font-extralight max-w-lg'>Build unlimited data pipelines, only pay for what you need with flexibility & efficiency.</p>
@@ -55,7 +55,15 @@ const Subscription = () => {
           <div className='text-md font-medium'>Customizable</div>
           <div className='text-xs text-[#C0C3CB] text-left md:text-center '>Get Chainsight Enterprise for your team members, speak with us.</div>
         </div>
-        <Button variant='tertiary' className='flex items-center justify-center text-white bg-[#27272A] w-32 h-9 rounded-lg '>
+        <Button variant='tertiary' className='flex items-center justify-center text-white bg-[#27272A] w-32 h-9 rounded-lg '
+        onClick={() => {
+          const contactSection = document.querySelector("#Contact_Us");
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: "smooth" });
+          }
+          window.dispatchEvent(new CustomEvent("switch-tab", { detail: "customization" }));
+        }}
+          >
           Go
         </Button>
       </div>

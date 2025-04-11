@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm, ValidationError } from "@formspree/react";
 
-const formId = import.meta.env.VITE_FORMSPREE_FORM_ID || "123xyz";
+const formId = import.meta.env.VITE_FORMSPREE_FORM_ID || "xrbprowg";
 
 const Connect = () => {
   const [state, handleSubmit] = useForm(formId);
@@ -62,6 +62,20 @@ const Connect = () => {
       handleSubmit(e as React.FormEvent<HTMLFormElement>);
     }
   };
+
+  useEffect(() => {
+    const handleCustomEvent = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      if (customEvent.detail === 'customization') {
+        setClick(1); 
+      }
+    };
+  
+    window.addEventListener('switch-tab', handleCustomEvent);
+    return () => {
+      window.removeEventListener('switch-tab', handleCustomEvent);
+    };
+  }, []);
 
   return (
     <div id="Contact_Us" className="flex flex-col items-center justify-center gap-6 my-10 px-4 sm:px-8 md:px-16 lg:px-20 w-full">

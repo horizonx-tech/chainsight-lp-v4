@@ -81,7 +81,7 @@ const Features = () => {
                                 </div>
                                 <div className='whitespace-nowrap'>{name}</div>
                             </div>
-                            <div className='text-[#FAFAFA] text-xs w-[85%] h-[60px] md:h-[60px]'>
+                            <div className='text-[#FAFAFA] text-sm w-[85%] h-[60px] md:h-[60px]'>
                                 {description}
                             </div>
                         </div>

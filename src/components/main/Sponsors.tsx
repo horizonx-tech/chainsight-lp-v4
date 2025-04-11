@@ -4,7 +4,7 @@ import { useEffect, useState, useMemo} from "react";
 
 const Sponsors = () => {
   const baseSponsors = useMemo(
-    () => ["polygon", "plume", "bnb", "bevm", "nero", "berachain", "lumia", "movement", "optimism"],
+    () => ["polygon", "plume", "bnb", "bevm", "nero", "berachain", "lumia", "movement", "optimism","overlay", "sonic", "IVX","polyhedra","rise","infrared","dolomite","BX3","bit10"],
     []
   );
   const [sponsors, setSponsors] = useState(baseSponsors);
@@ -42,7 +42,7 @@ const Sponsors = () => {
             sponsors.map((src, j) => (
               <img
                 key={`sponsor-${i}-${j}-${src}`}
-                src={`${src}.svg`}
+                src={`/sponsors/${src}.svg`}
                 alt={src}
                 className="h-5 w-auto flex-none"
               />
