@@ -17,7 +17,7 @@ const cacheKey = (yyyyMMdd: string, userId: string) =>
 
 const getTopPosts = async (date: string, userId: string): Promise<Tweet[]> => {
   const key = cacheKey(date, userId);
-  const cached = await getFromCache(key);
+  const cached = (await getFromCache(key)) as Tweet[] | undefined;
   if (cached) return cached;
 
   const response = await getTweets(USER_ID);
@@ -97,16 +97,7 @@ const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL!;
 const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN!;
 const redis = new Redis({ url: REDIS_URL!, token: REDIS_TOKEN! });
 
-const getFromCache = async (key: string) => {
-  const value = (await redis.get(key)) as string;
-  if (!value) return null;
-  try {
-    return JSON.parse(value);
-  } catch (error) {
-    console.error("Failed to parse cached value:", error);
-    return null;
-  }
-};
+const getFromCache = async (key: string) => redis.get(key);
 
 const saveCache = (key: string, data: unknown) =>
   redis.set(key, JSON.stringify(data));
