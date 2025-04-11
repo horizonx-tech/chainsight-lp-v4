@@ -60,14 +60,25 @@ const Hero = () => {
             Securely register data from any source, verify its integrity & deploy it to any network.
           </div>
           <div className="flex gap-3 md:gap-[15px] mt-4 md:mt-6 ">
+          <a 
+            href="https://docs.chainsight.network/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             <Button 
               variant="secondary" 
               size="sm" 
               className="flex gap-2 text-xs md:text-sm text-[#FAFAFA] justify-center items-center"
             >
               View Docs
-              <MdArrowOutward size={15} className=""/> 
+              <MdArrowOutward size={15} />
             </Button>
+          </a>
+          <a 
+            href="https://v1.chainsight.network/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             <Button 
               variant="tertiary" 
               size="sm" 
@@ -76,6 +87,7 @@ const Hero = () => {
               Oracle Builder
               <IoMdArrowRoundForward size={15} className=""/> 
             </Button>
+            </a>
           </div>
         </div>
         <div className="hidden max-w-[80vw] sm:flex w-full h-auto md:h-[215px] mt-4 md:mt-[10px] px-0">
