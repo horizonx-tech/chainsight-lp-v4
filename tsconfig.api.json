@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "rootDir": "src/api",
+    "outDir": "api",
+    "baseUrl": "."
+  },
+  "include": ["src/api/**/*.ts"]
+}
