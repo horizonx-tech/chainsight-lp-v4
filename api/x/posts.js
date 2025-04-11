@@ -14,7 +14,7 @@ const USER_ID = "1654772598578765824";
 const cacheKey = (yyyyMMdd, userId) => `x/posts/${yyyyMMdd}/${userId}`;
 const getTopPosts = async (date, userId) => {
     const key = cacheKey(date, userId);
-    const cached = await getFromCache(key);
+    const cached = (await getFromCache(key));
     if (cached)
         return cached;
     const response = await getTweets(USER_ID);
@@ -45,16 +45,5 @@ import { Redis } from "@upstash/redis";
 const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL;
 const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
 const redis = new Redis({ url: REDIS_URL, token: REDIS_TOKEN });
-const getFromCache = async (key) => {
-    const value = (await redis.get(key));
-    if (!value)
-        return null;
-    try {
-        return JSON.parse(value);
-    }
-    catch (error) {
-        console.error("Failed to parse cached value:", error);
-        return null;
-    }
-};
+const getFromCache = async (key) => redis.get(key);
 const saveCache = (key, data) => redis.set(key, JSON.stringify(data));
