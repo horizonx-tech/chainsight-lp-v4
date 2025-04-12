@@ -15,7 +15,7 @@ const Resources = () => {
     },
     {
       id: 1,
-      imgSrc: "/resources1.png",
+      imgSrc: "/resources2.png",
       title: "Which altcoins should Bitcoiners have owned?",
       date: "2024/09/06",
       description: "Research identifying the six altcoins that consistently improve portfolio performance when held alongside Bitcoin, based on Sharpe ratio analysis.",
@@ -23,7 +23,7 @@ const Resources = () => {
     },
     {
       id: 2,
-      imgSrc: "/resources1.png",
+      imgSrc: "/resources3.png",
       title: "Information disclosure on crypto assets by Chainsight",
       date: "2023/07/14",
       description: "Shortly describe how this feature solves a specific user problem.",
