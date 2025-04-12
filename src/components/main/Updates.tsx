@@ -47,7 +47,7 @@ useEffect(() => {
             <h2 className="text-2xl text-[#FAFAFA]">Our Updates</h2>
             <div className='flex gap-3 w-[20%] md:w-[10%] mt-2'>
             <div
-                className={`w-12 h-6 md:w-7 md:h-6 flex rounded-sm hover:bg-black items-center justify-center bg-[#27272A] cursor-pointer  ${slidePosition <= 0 ? 'opacity-50' : 'opacity-100'}`}
+                className={`w-12 h-6 md:w-7 md:h-6 flex rounded-sm hover:bg-[#3f3f46] items-center justify-center bg-[#27272A] cursor-pointer  ${slidePosition <= 0 ? 'opacity-50' : 'opacity-100'}`}
                 onClick={() => handleBackward({ setSlidePosition, visibleCards })}
                 
               >
