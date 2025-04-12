@@ -31,7 +31,7 @@ const Updates = () => {
     console.log("hellop")
     setSlidePosition((prev) => {
       const totalSlides = maxLength + 1 - visibleCards;
-      const cardShift = 110 / (maxLength + 1);
+      const cardShift = 120 / (maxLength + 1);
       const maxSlidePosition = -(totalSlides * cardShift);
       const nextPosition = prev - cardShift;
   
@@ -51,9 +51,9 @@ const Updates = () => {
 useEffect(() => {
   const fetchTweets = async () => {
     try {
-      // const res = await fetch("https://your-api-url.com/api/x/posts");
-      // const result: Tweet[] = await res.json();
-      const result:Tweet[] = [{"created_at":"2025-04-10T22:22:30.000Z","edit_history_tweet_ids":["1910458394034524257"],"id":"1910458394034524257","text":"Our MultiOracle Aggregator is also tariff free✨ https://t.co/1X3JYARfJO","attachments":{"media":[{"media_key":"13_1910458297536090112","preview_image_url":"https://pbs.twimg.com/amplify_video_thumb/1910458297536090112/img/bDrrUKJ_VdTlBgW-.jpg","type":"video"}]}},{"created_at":"2025-04-10T13:35:01.000Z","edit_history_tweet_ids":["1910325648981188793"],"id":"1910325648981188793","text":"No tariffs on Portal V1. ✨ https://t.co/T333KJbk2L"},{"created_at":"2025-04-09T14:39:29.000Z","edit_history_tweet_ids":["1909979486021665142"],"id":"1909979486021665142","text":"Building multichain &amp; need reliable data? Contact us! ✨\n\n5/5 https://t.co/YIzI5DCZxf","attachments":{"media":[{"media_key":"3_1909979476672622592","type":"photo","url":"https://pbs.twimg.com/media/GoGcNutbsAAVtOo.jpg"}]}},{"created_at":"2025-04-09T14:39:24.000Z","edit_history_tweet_ids":["1909979461736698152"],"id":"1909979461736698152","text":"The result: A weighted aggregation that adapts to real-time conditions, powering other contracts with a dependable price feed.\n\n4/5"},{"created_at":"2025-04-09T14:39:21.000Z","edit_history_tweet_ids":["1909979449858437462"],"id":"1909979449858437462","text":"Why it matters: Using multiple oracles boosts redundancy &amp; accuracy. If one feed lags or fails, the others keep the system reliable.\n\n3/5"}]
+      const res = await fetch("/api/x/posts");
+      const result: Tweet[] = await res.json();
+      // const result:Tweet[] = [{"created_at":"2025-04-10T22:22:30.000Z","edit_history_tweet_ids":["1910458394034524257"],"id":"1910458394034524257","text":"Our MultiOracle Aggregator is also tariff free✨ https://t.co/1X3JYARfJO","attachments":{"media":[{"media_key":"13_1910458297536090112","preview_image_url":"https://pbs.twimg.com/amplify_video_thumb/1910458297536090112/img/bDrrUKJ_VdTlBgW-.jpg","type":"video"}]}},{"created_at":"2025-04-10T13:35:01.000Z","edit_history_tweet_ids":["1910325648981188793"],"id":"1910325648981188793","text":"No tariffs on Portal V1. ✨ https://t.co/T333KJbk2L"},{"created_at":"2025-04-09T14:39:29.000Z","edit_history_tweet_ids":["1909979486021665142"],"id":"1909979486021665142","text":"Building multichain &amp; need reliable data? Contact us! ✨\n\n5/5 https://t.co/YIzI5DCZxf","attachments":{"media":[{"media_key":"3_1909979476672622592","type":"photo","url":"https://pbs.twimg.com/media/GoGcNutbsAAVtOo.jpg"}]}},{"created_at":"2025-04-09T14:39:24.000Z","edit_history_tweet_ids":["1909979461736698152"],"id":"1909979461736698152","text":"The result: A weighted aggregation that adapts to real-time conditions, powering other contracts with a dependable price feed.\n\n4/5"},{"created_at":"2025-04-09T14:39:21.000Z","edit_history_tweet_ids":["1909979449858437462"],"id":"1909979449858437462","text":"Why it matters: Using multiple oracles boosts redundancy &amp; accuracy. If one feed lags or fails, the others keep the system reliable.\n\n3/5"}]
       setTweets(result);
     } catch (err) {
       console.error("Error fetching tweets:", err);
@@ -73,17 +73,14 @@ useEffect(() => {
             <h2 className="text-2xl text-[#FAFAFA]">Our Updates</h2>
             <div className='flex gap-3 w-[20%] md:w-[10%] mt-2'>
             <div
-                className={`w-12 h-6 md:w-7 md:h-6 flex rounded-sm items-center justify-center bg-[#27272A] cursor-pointer hover:bg-[#3f3f46] ${slidePosition >= 0 ? 'opacity-50' : 'opacity-100'}`}
-                onClick={() => {
-                  console.log("back clicked", { slidePosition, visibleCards });
-                  handleBackward({ setSlidePosition, visibleCards });
-                }}
+                className={`w-12 h-6 md:w-7 md:h-6 flex rounded-sm hover:bg-black items-center justify-center bg-[#27272A] cursor-pointer  ${slidePosition >= 0 ? 'opacity-50' : 'opacity-100'}`}
+                onClick={() => handleBackward({ setSlidePosition, visibleCards })}
                 
               >
                 <IoArrowBackSharp size={14} />
               </div>
               <div
-                className={`w-12 h-6 md:w-7 md:h-6 flex rounded-sm items-center justify-center bg-[#27272A] cursor-pointer hover:bg-[#3f3f46] ${slidePosition > -(tweets.length * 5) ? 'opacity-50' : 'opacity-100'}`}
+                className={`w-12 h-6 md:w-7 md:h-6 flex rounded-sm items-center justify-center bg-[#27272A] cursor-pointer hover:bg-[#3f3f46] ${slidePosition > -(tweets.length ) ? 'opacity-50' : 'opacity-100'}`}
                 onClick={() => handleForward({ setSlidePosition, maxLength, visibleCards })}
               >
                 <IoMdArrowRoundForward size={14} />
