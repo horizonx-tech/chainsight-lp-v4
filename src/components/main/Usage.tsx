@@ -61,13 +61,13 @@ const Usage = () => {
           </div>
           <div className={`hidden md:flex gap-3 w-[25%] md:w-[10%] mt-2`}>
             <div 
-              className={`w-12 h-6 md:w-7 md:h-6 flex rounded-sm items-center justify-center bg-[#27272A] cursor-pointer hover:bg-[#3f3f46] ${slidePosition >= 0 ? 'opacity-50' : 'opacity-100'}`}
+              className={`w-12 h-6 md:w-7 md:h-6 flex rounded-sm items-center justify-center bg-[#27272A] cursor-pointer hover:bg-[#3f3f46] ${slidePosition <= 0 ? 'opacity-50' : 'opacity-100'}`}
               onClick={() => handleBackward({setSlidePosition, visibleCards})}
             >
               <IoArrowBackSharp size={14} />
             </div>
             <div 
-              className={`w-12 h-6 md:w-7 md:h-6 flex rounded-sm items-center justify-center bg-[#27272A] cursor-pointer hover:bg-[#3f3f46] ${slidePosition <= -((cardVariants.length - visibleCards) * 100) ? 'opacity-50' : 'opacity-100'}`}
+              className={`w-12 h-6 md:w-7 md:h-6 flex rounded-sm items-center justify-center bg-[#27272A] cursor-pointer hover:bg-[#3f3f46] ${slidePosition > -(cardVariants.length * 5) ? 'opacity-50' : 'opacity-100'}`}
               onClick={() => handleForward({setSlidePosition, maxLength, visibleCards})}
             >
               <IoMdArrowRoundForward size={14} />

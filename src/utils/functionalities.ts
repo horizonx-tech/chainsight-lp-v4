@@ -1,29 +1,27 @@
 type SlideParams = {
-  setSlidePosition: React.Dispatch<React.SetStateAction<number>>;
-  visibleCards: number;
-  maxLength?: number;
-};
-
+    setSlidePosition: React.Dispatch<React.SetStateAction<number>>;
+    visibleCards: number;
+    maxLength?: number;
+  };
+  
 export const handleForward = ({ setSlidePosition, visibleCards, maxLength = 0 }: SlideParams) => {
-  console.log("hellop")
-  setSlidePosition((prev) => {
-    const totalSlides = maxLength + 1 - visibleCards;
-    const cardShift = 100 / (maxLength + 1);
-    const maxSlidePosition = -(totalSlides * cardShift);
-    const nextPosition = prev - cardShift;
-
-    return nextPosition < maxSlidePosition ? maxSlidePosition : nextPosition;
-  });
-};
-
+    setSlidePosition((prev) => {
+      const totalSlides = maxLength + 1 - visibleCards;
+      const cardShift = 120 / (maxLength + 1);
+      const maxSlidePosition = -(totalSlides * cardShift);
+      const nextPosition = prev - cardShift;
+  
+      return nextPosition < maxSlidePosition ? maxSlidePosition : nextPosition;
+    });
+  };
+  
 export const handleBackward = ({ setSlidePosition, visibleCards }: SlideParams) => {
-  console.log("hellob")
-  setSlidePosition((prev) => {
-    const cardShift = 100 / visibleCards;
-    const nextPosition = prev + cardShift;
-    return nextPosition > 0 ? 0 : nextPosition;
-  });
-};
+    setSlidePosition((prev) => {
+      const cardShift = 100 / visibleCards;
+      const nextPosition = prev + cardShift;
+      return nextPosition > 0 ? 0 : nextPosition;
+    });
+  };
 
 
 
