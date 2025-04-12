@@ -78,7 +78,7 @@ function App() {
             <HomePage />
           </AppLayout>
         } />
-        <Route path="/resources" element={
+        <Route path="/Blog" element={
           <AppLayout>
             <Resources />
           </AppLayout>

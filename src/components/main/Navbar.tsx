@@ -17,10 +17,10 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { name: "Resources", url: "/resources" },
     { name: "Ecosystem", url: "/soon" },
     { name: "Product", url: "#product" },
-    { name: "Docs", url: "https://docs.chainsight.network/" },
+    { name: "Docs", url: "https://docs.chainsight.network/chainsight-overview/ecosystem" },
+    { name: "Blog", url: "/Blog" },
     { name: "Contact Us", url: "#Contact_Us" },
   ];
 
