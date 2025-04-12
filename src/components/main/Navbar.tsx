@@ -6,10 +6,11 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
 import { scrollToElement } from "../../utils/functionalities";
+import {useNavigate} from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const navigate= useNavigate()
   const menuVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeInOut" } },
@@ -49,6 +50,7 @@ const Navbar = () => {
                       if (item.url.startsWith("http")) {
                         window.open(item.url, "_blank");
                       } else if (item.url.startsWith("#")) {
+                        navigate("/")
                         scrollToElement(item.url);
                       } else {
                         window.location.href = item.url;

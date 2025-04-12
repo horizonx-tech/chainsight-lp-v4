@@ -54,7 +54,7 @@ const Usage = () => {
   return (
     <div className="w-full flex items-center justify-center mb-10">
       <div className="flex flex-col gap-4 items-start justify-center bg-[#09090B] rounded-xl max-w-[90vw] md:w-[80%] xl:max-w-screen-lg p-5">
-        <h2 className="text-xl text-white">Use Cases of ChainSight</h2>
+        <h2 className="text-xl text-white">ChainSight's Use Cases</h2>
         <div className='flex justify-between w-full'>
           <div>
 

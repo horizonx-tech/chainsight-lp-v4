@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useParams  } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
 
 // Main components
 import Navbar from "./components/main/Navbar";
@@ -14,13 +14,11 @@ import OracleInfo from "./components/main/OracleInfo";
 import Usage from "./components/main/Usage";
 import Subscription from "./components/main/Subscription";
 import Faq from "./components/main/Faq";
+import Updates from "./components/main/Updates";
 import Connect from "./components/main/Connect";
 
 // Resources page
 import Resources from "./components/main/Resources";
-import AcademicPaper1 from "./components/sub/AcademicPaper1";
-import AcademicPaper2 from "./components/sub/AcademicPaper2";
-import AcademicPaper3 from "./components/sub/AcademicPaper3";
 // Home page component
 function HomePage() {
   return (
@@ -33,7 +31,7 @@ function HomePage() {
       <Usage />
       <Subscription />
       <Faq />
-      {/* <Updates /> */}
+      <Updates />
       <Connect />
     </>
   );
@@ -59,7 +57,7 @@ function AppLayout({ children }: AppLayoutProps) {
 function ComingSoonPage() {
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen bg-black text-white px-4">
+    <div className="flex flex-col items-center justify-center w-full h-screen bg-black border-t-2 border-[#111827] text-white px-4"  style={{ width: '100vw', maxWidth: '100%' }}>
       <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-pulse">
         🚧 Coming Soon
       </h1>
@@ -70,22 +68,7 @@ function ComingSoonPage() {
   );
 }
 
-function ResourcePage(){
-  const { id } = useParams<{ id: string }>();
-  switch(id){
-    case "1":
-       return <AcademicPaper1/>
-    case "2":
-      return <AcademicPaper2/>
-    case "3":
-        return <AcademicPaper3/>
-  }
-  return (
-    <div className="resource-page-container">
-      
-    </div>
-  );
-}
+
 function App() {
   return (
     <Router>
@@ -98,11 +81,6 @@ function App() {
         <Route path="/resources" element={
           <AppLayout>
             <Resources />
-          </AppLayout>
-        } />
-        <Route path="/resources/:id" element={
-          <AppLayout>
-            <ResourcePage />
           </AppLayout>
         } />
         <Route path="/soon" element={
