@@ -42,7 +42,7 @@ const Features = () => {
                     <div className="absolute inset-0 w-full h-full p-10">
                         <img src="/databg.webp" alt="" className="w-full h-full object-cover" />
                     </div>
-                    <div className='flex flex-col gap-4 items-center justify-center w-[90%] h-[550px] md:h-[550px] pb-[150px] md:pb-[200px] relative z-50'>
+                    <div className='flex flex-col gap-4 items-center justify-center w-[90%] h-[600px] md:h-[550px] pb-[220px] md:pb-[200px] relative z-50'>
                         <h2 className='text-[#FAFAFA] text-md text-center md:text-2xl w-[90%] mt-5'>Tools to Bring Any Data On-chain</h2>
                         <div style={{scrollbarWidth: "none"}} className="bg-[#09090B] text-[#FFFFFF] flex gap-4 md:gap-2 rounded-full p-1 overflow-x-scroll overflow-y-hidden h-10 md:overflow-hidden text-sm relative max-w-[98%] md:max-w-[90%] md:w-full">
                             {items.map((item, index) => {
@@ -85,7 +85,7 @@ const Features = () => {
                                 {description}
                             </div>
                         </div>
-                        <div className='absolute -bottom-80 w-[65vw] h-[500px] md:w-[600px] md:h-[600px] bg-[#FFE000] blur-3xl opacity-35 rounded-full '>
+                        <div className='absolute -bottom-80 w-[70vw] h-[550px] md:w-[600px] md:h-[600px] bg-[#FFE000] blur-3xl opacity-35 rounded-full '>
                         </div>
                         <img 
                             src="/ellipse.svg" 

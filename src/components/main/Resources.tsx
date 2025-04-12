@@ -11,15 +11,15 @@ const Resources = () => {
       title: "Rating Stablecoins",
       date: "2025/03/16",
       description: "Shortly describe how this feature solves a specific user problem.",
-      link: "/resources/3"
+      link: "/downloads/20250316_ChainSight_Rating_Stablecoins.pdf"
     },
     {
       id: 1,
       imgSrc: "/resources1.png",
-      title: "Optimal Altcoins for Bitcoin Portfolio Diversification",
+      title: "Which altcoins should Bitcoiners have owned?",
       date: "2024/09/06",
       description: "Research identifying the six altcoins that consistently improve portfolio performance when held alongside Bitcoin, based on Sharpe ratio analysis.",
-      link: "/resources/1"
+      link: "/downloads/20240906_ChainSight_SharpeRatio.pdf"
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ const Resources = () => {
       title: "Information disclosure on crypto assets by Chainsight",
       date: "2023/07/14",
       description: "Shortly describe how this feature solves a specific user problem.",
-      link: "/resources/2"
+      link: "downloads/20230714_ChainSight.pdf"
     },
   ];
 

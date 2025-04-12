@@ -51,11 +51,11 @@ const Highlights = () => {
                               text-center 
                               sm:text-left`}
                       >
-                          <img 
+                          {/* <img 
                               src="/arrow.svg" 
                               alt="arrow" 
                               className="absolute top-2 right-0 block" 
-                          />
+                          /> */}
                           
                           <div className="flex flex-col items-start w-full h-full">
                               <div className="flex-2/3 md:flex-3/5 flex items-end md:items-center md:justify-start w-full mb-6 md:mb-4">

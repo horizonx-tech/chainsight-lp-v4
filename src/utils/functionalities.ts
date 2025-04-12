@@ -1,25 +1,31 @@
-export const handleForward = ({ setSlidePosition, maxLength, visibleCards }: {
+type SlideParams = {
   setSlidePosition: React.Dispatch<React.SetStateAction<number>>;
-  maxLength: number;
   visibleCards: number;
-}) => {
-  setSlidePosition(prev => {
-    const cardWidth = 110 / visibleCards; // Move by one card width
-    const newPos = prev - cardWidth;
-    const maxOffset = -((maxLength - (visibleCards - 1)) * cardWidth);
-    return newPos <= maxOffset ? maxOffset : newPos;
+  maxLength?: number;
+};
+
+export const handleForward = ({ setSlidePosition, visibleCards, maxLength = 0 }: SlideParams) => {
+  console.log("hellop")
+  setSlidePosition((prev) => {
+    const totalSlides = maxLength + 1 - visibleCards;
+    const cardShift = 100 / (maxLength + 1);
+    const maxSlidePosition = -(totalSlides * cardShift);
+    const nextPosition = prev - cardShift;
+
+    return nextPosition < maxSlidePosition ? maxSlidePosition : nextPosition;
   });
-}
-export const handleBackward = ({ setSlidePosition, visibleCards }: {
-    setSlidePosition: React.Dispatch<React.SetStateAction<number>>;
-    visibleCards: number;
-  }) => {
-    setSlidePosition(prev => {
-      const cardWidth = 100 / visibleCards;
-      const newPos = prev + cardWidth;
-      return newPos >= 0 ? 0 : newPos;
-    });
-  };
+};
+
+export const handleBackward = ({ setSlidePosition, visibleCards }: SlideParams) => {
+  console.log("hellob")
+  setSlidePosition((prev) => {
+    const cardShift = 100 / visibleCards;
+    const nextPosition = prev + cardShift;
+    return nextPosition > 0 ? 0 : nextPosition;
+  });
+};
+
+
 
 export  const scrollToElement = (id: string) => {
     const element = document.querySelector(id);

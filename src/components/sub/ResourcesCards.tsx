@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 interface ResourceCardProps {
   imgSrc: string;
@@ -18,12 +17,12 @@ const ResourcesCards: React.FC<ResourceCardProps> = ({
   link,
   variant = 'dark',
 }) => {
-  const navigate = useNavigate();
   const bgClass = variant === 'dark' ? 'bg-[#090909]' : 'bg-[#000000]';
 
   const handleClick = () => {
-    navigate(link);
+    window.location.href = link;
   };
+
 
   return (
     <div
