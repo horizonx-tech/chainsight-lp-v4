@@ -17,9 +17,9 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { name: "Ecosystem", url: "/soon" },
+    { name: "Ecosystem", url: "https://docs.chainsight.network/chainsight-overview/ecosystem" },
     { name: "Product", url: "#product" },
-    { name: "Docs", url: "https://docs.chainsight.network/chainsight-overview/ecosystem" },
+    { name: "Docs", url: "https://docs.chainsight.network/" },
     { name: "Blog", url: "/Blog" },
     { name: "Contact Us", url: "#Contact_Us" },
   ];
