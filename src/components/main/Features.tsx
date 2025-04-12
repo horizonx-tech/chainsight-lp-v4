@@ -7,7 +7,7 @@ const items = [
     <path d="M25 4.66675C25 6.87589 19.6274 8.66675 13 8.66675C6.37258 8.66675 1 6.87589 1 4.66675M25 4.66675C25 2.45761 19.6274 0.666748 13 0.666748C6.37258 0.666748 1 2.45761 1 4.66675M25 4.66675V23.3334C25 24.3943 23.7357 25.4117 21.4853 26.1618C19.2348 26.912 16.1826 27.3334 13 27.3334C9.8174 27.3334 6.76516 26.912 4.51472 26.1618C2.26428 25.4117 1 24.3943 1 23.3334L1 4.66675" stroke="currentColor"/>
     </svg>
   ),
-  description: "The Base Indexer is responsible for fetching data from the Data Source and indexing it on-chain. We support multiple ingestion strategies for the Base Indexer, allowing a balance between cost, speed & trust. The Advanced Indexer allows for historical analysis & custom computations on that data."
+  description: "The Base Indexer is responsible for fetching data from the Data Source & indexing it on-chain. We support multiple ingestion strategies for the Base Indexer, allowing a balance between cost, speed & trust. The Advanced Indexer allows for historical analysis & custom computations on that data."
  },
   { name: "Oracle Deployment", Icon: (
     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,7 +81,7 @@ const Features = () => {
                                 </div>
                                 <div className='whitespace-nowrap'>{name}</div>
                             </div>
-                            <div className='text-[#FAFAFA] text-sm w-[85%] h-[60px] md:h-[60px]'>
+                            <div className='text-[#FAFAFA] text-sm md:text-[18px] w-[85%] h-[60px] md:h-[60px]'>
                                 {description}
                             </div>
                         </div>

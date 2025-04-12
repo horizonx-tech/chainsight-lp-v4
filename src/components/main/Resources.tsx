@@ -10,7 +10,7 @@ const Resources = () => {
       imgSrc: "/resources1.png",
       title: "Rating Stablecoins",
       date: "2025/03/16",
-      description: "Shortly describe how this feature solves a specific user problem.",
+      description: "We have developed a method for rating stablecoins based on various key evaluation measures. We have transformed those values into an easy-to-compare score using the logarithmic transformation & the max normalization.",
       link: "/downloads/20250316_ChainSight_Rating_Stablecoins.pdf"
     },
     {
@@ -18,7 +18,7 @@ const Resources = () => {
       imgSrc: "/resources2.png",
       title: "Which altcoins should Bitcoiners have owned?",
       date: "2024/09/06",
-      description: "Research identifying the six altcoins that consistently improve portfolio performance when held alongside Bitcoin, based on Sharpe ratio analysis.",
+      description: "We have analyzed coins that are to be held with Bitcoin for portfolio management. For this purpose, we designed a novel evaluation score of coins by using the Sharpe ratio.",
       link: "/downloads/20240906_ChainSight_SharpeRatio.pdf"
     },
     {
@@ -26,7 +26,7 @@ const Resources = () => {
       imgSrc: "/resources3.png",
       title: "Information disclosure on crypto assets by Chainsight",
       date: "2023/07/14",
-      description: "Shortly describe how this feature solves a specific user problem.",
+      description: "We present a series of economic, political & social indicators of crypto assets that can be created using on-chain data of crypto assets as easy-to-use time series data.",
       link: "downloads/20230714_ChainSight.pdf"
     },
   ];
