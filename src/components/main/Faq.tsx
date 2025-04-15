@@ -6,7 +6,7 @@ const FaqItem = ({ question, answer }:{question: string, answer: string}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-700 py-4 text-sm text-[#FAFAFA]">
+    <div className="border-b border-gray-700 py-4 text-sm text-[#FAFAFA] ">
       <div 
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
@@ -15,7 +15,7 @@ const FaqItem = ({ question, answer }:{question: string, answer: string}) => {
         <motion.span 
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
-          className="text-white text-xl"
+          className="text-white text-xl z-50"
         >
           {isOpen ? '−' : '+'}
         </motion.span>

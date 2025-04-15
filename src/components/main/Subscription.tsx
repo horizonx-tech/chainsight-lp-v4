@@ -52,7 +52,7 @@ const Subscription = () => {
           <div className='text-md font-medium'>Customizable</div>
           <div className='text-xs text-[#C0C3CB] text-left md:text-center '>Get Chainsight Enterprise for your team members, speak with us.</div>
         </div>
-        <Button variant='tertiary' className='flex items-center justify-center text-white bg-[#27272A] w-32 h-9 rounded-lg '
+        <Button variant='tertiary' className='flex items-center cursor-pointer hover:bg-green justify-center text-white bg-[#27272A] w-32 z-50 h-9 rounded-lg '
         onClick={() => {
           const contactSection = document.querySelector("#Contact_Us");
           if (contactSection) {

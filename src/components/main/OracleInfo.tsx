@@ -100,7 +100,7 @@ const OracleInfo = () => {
         </div>
         <Button
           variant="tertiary"
-          className='text-white bg-[#27272A] w-32 h-9 rounded-lg flex items-center justify-center text-xs gap-1'
+          className='text-white bg-[#27272A] w-32 h-9 rounded-lg flex items-center justify-center text-xs gap-1 z-50 '
           onClick={() => scrollToElement('#subscription')}
         >
           See Pricing <IoMdArrowRoundForward />
