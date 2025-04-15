@@ -85,7 +85,7 @@ const Features = () => {
                                 {description}
                             </div>
                         </div>
-                        <div className='absolute -bottom-80 w-[70vw] h-[500px] md:w-[580px] md:h-[600px] bg-[#FFE000] blur-3xl opacity-75 rounded-full '>
+                        <div className='absolute -bottom-80 w-[70vw] h-[480px] md:w-[580px] md:h-[550px] bg-[#FFE000] blur-3xl opacity-75 rounded-full '>
                         </div>
                         <img 
                             src="/ellipse2.svg" 
