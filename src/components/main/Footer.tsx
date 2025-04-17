@@ -11,7 +11,6 @@ const Footer = () => {
               <img src="/logo.svg" alt="ChainSight"/>
         </div>
           <div className="flex flex-col sm:flex-row gap-4 text-lg sm:text-sm text-[#A1A1AA]">
-            <div className="font-bold flex items-center justify-center" style={{ color: theme.colors.text.primary }}>Company</div>
             <div className="flex flex-col items-center justify-center sm:flex-row gap-4">
             <div className="hover:text-[#fff] cursor-pointer" onClick={() => navigate('/soon')}>About Us</div>
               {/* 
@@ -28,7 +27,6 @@ const Footer = () => {
           
           {/* Social Links */}
           <div className="flex flex-col sm:flex-row gap-4 text-lg sm:text-sm text-[#A1A1AA]">
-            <div className="font-bold flex items-center justify-center" style={{ color: theme.colors.text.primary }}>Socials</div>
             <div className="flex flex-col items-center justify-center sm:flex-row gap-4">
             <a 
               href="https://t.me/chainsight_net" 
@@ -61,7 +59,7 @@ const Footer = () => {
           <hr className="border-t border-[#27272A] my-[10px]" />
           
           <div className="flex flex-col sm:flex-row justify-between text-lg sm:text-sm text-[#A1A1AA] gap-4">
-            <div className="text-center sm:text-left">Copyright 2048 © ChainSight.network</div>
+            <div className="text-center sm:text-left">Copyright 2025 © ChainSight.network</div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
               href="https://chainsight.network/docs/privacy" 

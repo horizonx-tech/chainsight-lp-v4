@@ -1,8 +1,8 @@
 import theme from "../../constants/theme";
-import { useState } from 'react';
+import { useState, JSX } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const FaqItem = ({ question, answer }:{question: string, answer: string}) => {
+const FaqItem = ({ question, answer }:{question: string, answer: string | JSX.Element}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -66,7 +66,7 @@ const Faq = () => {
     },
     { 
       question: "Which networks is ChainSight available on?", 
-      answer: "Chainsight supports multiple blockchain networks, primarily EVM, SVM & Aptos MoveVM compatible chains. See list for more." 
+      answer: <>Chainsight supports multiple blockchain networks, primarily EVM, SVM & Aptos MoveVM compatible chains. <a href="https://github.com/horizonx-tech/chainsight-management-oracle" target="_blank" rel="noopener noreferrer" className="text-blue-400 relative z-50 underline cursor-pointer">See list</a> for more.</>
     },
     { 
       question: "Why is ChainSight different from other oracle providers?", 

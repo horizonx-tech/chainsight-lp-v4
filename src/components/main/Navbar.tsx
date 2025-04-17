@@ -33,7 +33,7 @@ const Navbar = () => {
       <div className="flex flex-col relative items-center justify-center w-full z-10">
         <div className="w-[85vw] flex items-center justify-between">
           <div className="flex">
-            <div className="w-[122px] h-[25px]">
+            <div className="w-[122px] h-[25px]" onClick={()=>navigate("/")}>
               <img src="/logo.svg" alt="ChainSight" />
             </div>
           </div>
