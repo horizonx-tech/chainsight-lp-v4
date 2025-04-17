@@ -69,7 +69,12 @@ useEffect(() => {
               transition={{ duration: 1 }}
               style={{ width: `${(tweets.length / visibleCards) * 100}%` }}
             >
-              {tweets.map((tweet) => (
+              {tweets.filter((tweet) => {
+              const trimmedText = tweet.text.trim();
+              const isOnlyLink = /^https:\/\/t\.co\/\w+$/.test(trimmedText);
+              const hasMedia = tweet.attachments?.media?.length && tweet.attachments.media.length > 0;
+              return !isOnlyLink || hasMedia;
+            }).map((tweet) => (
                 <div
                   key={tweet.id}
                   className="min-w-[300px] p-4 bg-[#010101] rounded-md flex flex-col justify-around h-auto text-sm"
