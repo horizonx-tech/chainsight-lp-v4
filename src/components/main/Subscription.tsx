@@ -43,9 +43,10 @@ const Subscription = () => {
   })}
 </motion.div>
       <div className='flex flex-col lg:flex-row items-center justify-center gap-4 w-full max-w-4xl'>
-        <SubscriptionCards variant="primary" title='Basic' content={`Always free, limited functionalities.`} monthlySubscription={0} features={["$0 / month","No monthly credits included","Dashboard features access"]} yearly={click}/>
-        <SubscriptionCards variant="secondary" title='Plus' content="Unlock advanced features with extra credits." monthlySubscription={click?89:99} features={["$99 / month (Annually: $89)","85,000 monthly credits","Index new data from UI","Make oracles from UI"]} yearly={click}/>
-        <SubscriptionCards variant="primary" title='Premium' content="Transform your multi-oracle workflow with enough power." monthlySubscription={click?899:999} features={["$999 / month (Annually: $899)","1.65 million monthly credits","Everything in Plus"]} yearly={click}/>
+        <SubscriptionCards variant="primary" title='Basic' content={`Always‑on essentials for small projects.`} monthlySubscription={click?89:99} features={["$99 / month (Annually: $89)","85,000 monthly credits","Create & monitor indexers from the UI","Deploy your relayer from the UI"]} yearly={click}/>
+        <SubscriptionCards variant="secondary" title='Plus' content="Scale your pipelines with higher limits and zkTLS security." monthlySubscription={click?449:499} features={["$499 / month (Annually: $449)","600,000 monthly credits — Get credits at a better value than the Basic plan","Create several indexers with zkTLS proofs","Create your advanced indexers","Deploy your relayer with deviation threshold settings"]} yearly={click}/>
+        <SubscriptionCards variant="primary" title='Premium' content="Power for high-frequency, multi-oracle workflows." monthlySubscription={click?899:999} features={["$999 / month (Annually: $899)","1.65 million monthly credits — Get credits at a better value than the Pro plan","Create 4 base indexers + 4 advanced indexers","Deploy several relayers with faster frequency"]} yearly={click}/>
+      
       </div>
       <div className='bg-[#09090B] border border-[#27272A] w-[90vw] sm:w-[50vw] lg:w-full max-w-4xl rounded-xl h-auto flex flex-col lg:flex-row items-start lg:items-center justify-center p-6 gap-4 text-center lg:text-left'>
         <div className='flex flex-col items-start gap-3 flex-1'>
