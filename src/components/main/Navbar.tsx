@@ -25,7 +25,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="relative top-7 left-0 w-full mb-20 sm:mb-0 flex justify-center z-50">
+    <div className="relative top-6 left-0 w-full mb-20 sm:mb-0 flex justify-center z-50">
       <div className="absolute top-0 left-0 w-full h-24 pointer-events-none">
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[30vw] h-40 bg-[#4A4A4A] blur-[100px] opacity-35 rounded-full"></div>
       </div>
@@ -33,7 +33,7 @@ const Navbar = () => {
       <div className="flex flex-col relative items-center justify-center w-full z-10">
         <div className="w-[85vw] flex items-center justify-between">
           <div className="flex">
-            <div className="w-[122px] h-[25px]" onClick={()=>navigate("/")}>
+            <div className="w-[122px] h-[20px] cursor-pointer" onClick={()=>navigate("/")}>
               <img src="/logo.svg" alt="ChainSight" />
             </div>
           </div>
@@ -44,7 +44,7 @@ const Navbar = () => {
             >
               {menuItems.map((item, index) => (
                 <div className="relative group" key={index}>
-                  <div className="transition-all ease-in-out duration-700 group-hover:bg-[#27272A] absolute inset-0 rounded-full mx-1 p-4"></div>
+                  <button className="transition-all ease-in-out duration-700 group-hover:bg-[#27272A] absolute inset-0 rounded-full mx-1 p-4"></button>
                   <div
                     onClick={() => {
                       if (item.url.startsWith("http")) {
@@ -68,16 +68,15 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-          <a href="https://v1.chainsight.network/" target="_blank" rel="noopener noreferrer">
             <Button
               variant="primary"
               size="lg"
-              className="hidden lg:flex items-center justify-center gap-1 p-2 py-3 text-xs"
+              className="hidden lg:flex items-center justify-center cursor-pointer gap-1 p-2 py-3 text-xs"
+              onClick={()=>window.open("https://v1.chainsight.network/", "_blank")}
             >
               <MdOutlineArrowOutward size={20} className="mt-0.5" />
               Launch App
             </Button>
-          </a>
           <div className="lg:hidden cursor-pointer z-50" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <AiOutlineClose size={24} className="text-white" /> : <RxHamburgerMenu size={30} />}
           </div>

@@ -1,21 +1,22 @@
 import theme from "../../constants/theme";
 import { useState, JSX } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import { scrollToElement } from "../../utils/functionalities";
 const FaqItem = ({ question, answer }:{question: string, answer: string | JSX.Element}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-700 py-4 text-sm text-[#FAFAFA] ">
+    <div className="border-b border-gray-700 py-4 relative text-sm text-[#FAFAFA]"
+    onClick={() => setIsOpen(!isOpen)}
+    >
       <div 
-        className="flex justify-between items-center cursor-pointer"
-        onClick={() => setIsOpen(!isOpen)}
+        className="flex justify-between items-center cursor-pointer "
       >
         <h4 className="text-[#FAFAFA] text-base font-normal">{question}</h4>
         <motion.span 
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
-          className="text-white text-xl z-50"
+          className="text-white text-xl"
         >
           {isOpen ? '−' : '+'}
         </motion.span>
@@ -88,8 +89,8 @@ const Faq = () => {
             <div className="flex">
               <p className="text-[#A1A1AA] text-sm font-sans gap-2 w-full md:w-[70%]">
                 We've compiled the most important information to help you get the most out of your experience. Can't find what you're looking for? 
-                <span className="text-white underline font-sans ml-1">
-                  <a href="">Contact Us</a>
+                <span className="text-white underline font-sans ml-1 cursor-pointer relative" onClick={()=>scrollToElement("#Contact_Us")}>
+                  Contact Us
                 </span>
               </p>
             </div>

@@ -1,6 +1,6 @@
+import clsx from 'clsx';
 const Highlights = () => {
-  const features = [
-      
+  const features = [   
       {
         icon: "flexibility.svg",
         title: 'User Driven Composability',
@@ -33,30 +33,23 @@ const Highlights = () => {
 
   return (
       <div className="flex items-center justify-center px-2 sm:px-4 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full max-w-[90vw] md:max-w-[80vw] xl:max-w-screen-lg border border-[#2E2E2E] my-10 md:my-20 rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full max-w-[90vw] md:max-w-[80vw] xl:max-w-screen-lg border-2 border-[#2E2E2E] my-10 md:my-20 rounded-2xl overflow-hidden">
               {features.map((feature, index) => {
+                const isFirst = index === 0;
+                const isLast = index === features.length - 1;
                   return (
-                      <div 
-                          key={feature.title}
-                          className={`relative w-full 
-                              ${index % 2 === 0 ? 'bg-[#020202]' : 'bg-[#0F0F0F]'} 
-                              border border-[#2E2E2E] 
-                              h-[350px]
-                              flex 
-                              flex-col 
-                              items-center 
-                              justify-start 
-                              py-4
-                              px-4 
-                              text-center 
-                              sm:text-left`}
-                      >
-                          {/* <img 
-                              src="/arrow.svg" 
-                              alt="arrow" 
-                              className="absolute top-2 right-0 block" 
-                          /> */}
-                          
+                    <div 
+                    key={feature.title}
+                    className={clsx(
+                      'relative w-full h-[350px] flex flex-col items-center justify-start py-4 px-4 text-center sm:text-left',
+                      index % 2 === 0 ? 'bg-[#020202]' : 'bg-[#0F0F0F]',
+                      isLast||'border-r-2 border-r-[#2E2E2E]',
+                      {
+                        'rounded-l-2xl sm:rounded-none': isFirst,
+                        'rounded-r-2xl sm:rounded-none': isLast,
+                      }
+                    )}
+                  >       
                           <div className="flex flex-col items-start w-full h-full">
                               <div className="flex-2/3 md:flex-3/5 flex items-end md:items-center md:justify-start w-full mb-6 md:mb-4">
                                   <img 

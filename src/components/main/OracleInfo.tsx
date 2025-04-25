@@ -63,15 +63,9 @@ const OracleInfo = () => {
             <p className='text-[#FAFAFA] text-xs max-w-[90%] md:max-w-[60%] text-left md:text-center font-extralight'>
               Fetch, index, insert logic & sync the data to any network. Deploy & monetize your oracles.
             </p>
-            <a
-              href="https://v1.chainsight.network/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className='bg-[#FAFAFA] hover:scale-110 text-[#27272A] flex items-center justify-center text-xs gap-1.5 h-6 p-4 rounded-lg transition-transform duration-200 active:scale-95'>
-                Launch Application <IoMdArrowRoundForward />
-              </button>
-            </a>
+            <button className='bg-[#FAFAFA] hover:scale-110 text-[#27272A] cursor-pointer flex items-center justify-center text-xs gap-1.5 h-6 p-4 rounded-lg transition-transform duration-200 active:scale-95' onClick={()=>window.open("https://v1.chainsight.network/", "_blank")}>
+              Launch Application <IoMdArrowRoundForward />
+            </button>
           </div>
 
           <div className="relative w-full z-10">
@@ -100,7 +94,7 @@ const OracleInfo = () => {
         </div>
         <Button
           variant="tertiary"
-          className='text-white bg-[#27272A] w-32 h-9 rounded-lg flex items-center justify-center text-xs gap-1 z-50 '
+          className='text-white bg-[#27272A] w-32 h-9 cursor-pointer rounded-lg flex items-center justify-center text-xs gap-1 z-50 '
           onClick={() => scrollToElement('#subscription')}
         >
           See Pricing <IoMdArrowRoundForward />
