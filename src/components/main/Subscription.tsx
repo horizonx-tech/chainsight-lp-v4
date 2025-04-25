@@ -33,7 +33,7 @@ const Subscription = () => {
         ):<></>}
         <span
           className={`relative z-10 transition-colors duration-200 ${
-            click==index ? "text-white font-semibold " : "text-[#A1A1AA]"
+            click==index ? "text-white " : "text-[#A1A1AA]"
           }`}
         >
           {item}

@@ -30,7 +30,7 @@ const Sponsors = () => {
       <div className="flex relative max-w-[90vw] overflow-hidden">
         <motion.div
           transition={{
-            duration: 10,
+            duration: 30,
             ease: "linear",
             repeat: Infinity,
           }}

@@ -33,7 +33,7 @@ const SubscriptionCards = ({variant, title, content, monthlySubscription, featur
                         variant == "primary"
                         ? "bg-[#27272A] text-[#FAFAFA] hover:bg-[#3f3f46]"
                         : "bg-[#FAFAFA] text-[#27272A] hover:hover:bg-[#cecdcd]"
-                    } text-xs w-full rounded-lg h-10 mb-3 active:scale-95`}
+                    } text-xs w-full rounded-lg h-10 mb-3 cursor-pointer active:scale-95`}
                     onClick={() => window.location.href = "https://v1.chainsight.network/pricing"}
                     >
                     Subscribe
@@ -46,9 +46,14 @@ const SubscriptionCards = ({variant, title, content, monthlySubscription, featur
                      {
                          features.map((feature,index)=>{
                              return(
-                                 <div className="flex justify-between items-center text-xs w-full" key={index}>
-                                     <div className="flex gap-3"><TiTick /> <span className="text-[#A1A1AA]">{feature}</span></div>
-                                     <div className="text-[#A1A1AA]"><PiWarningCircleLight /></div>
+                                 <div className="flex justify-between items-start text-xs w-full" key={index}>
+                                    <div className="flex items-start  gap-3">
+                                        <TiTick className="text-lg"/> 
+                                        <span className="text-[#A1A1AA] w-full">{feature}</span>
+                                    </div>
+                                     <div className="text-[#A1A1AA]">
+                                        <PiWarningCircleLight />
+                                    </div>
                                  </div>
                              )
                          })

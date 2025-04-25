@@ -1,11 +1,9 @@
 import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
 
-// Main components
 import Navbar from "./components/main/Navbar";
 import Footer from "./components/main/Footer";
 import { ReactNode } from "react";
 
-// Home page components
 import Hero from "./components/main/Hero";
 import Sponsors from "./components/main/Sponsors";
 import Highlights from "./components/main/Highlights";
@@ -17,9 +15,7 @@ import Faq from "./components/main/Faq";
 import Updates from "./components/main/Updates";
 import Connect from "./components/main/Connect";
 
-// Resources page
 import Resources from "./components/main/Resources";
-// Home page component
 function HomePage() {
   return (
     <>
@@ -44,7 +40,7 @@ interface AppLayoutProps {
 function AppLayout({ children }: AppLayoutProps) {
   return (
     <div className="relative flex items-center justify-center bg-[#00000] overflow-x-clip">
-      <div className="hidden lg:flex absolute bg-transparent h-full w-[90vw] border-x-2 border-[#111827]"></div>
+      <div className="hidden lg:flex absolute bg-transparent h-full w-[90vw] border-x-2 border-[#111827] -z-50"></div>
       <div className="">
         <Navbar />
         {children}
