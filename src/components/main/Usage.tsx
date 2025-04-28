@@ -1,55 +1,39 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from "framer-motion";
 import UsageCards from '../sub/UsageCards';
+import { useCarousel } from '../../hooks/useCarousel';
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { IoArrowBackSharp } from "react-icons/io5";
-import { handleBackward, handleForward } from '../../utils/functionalities';
+import { calculateTotalShift} from '../../utils/functionalities';
 
 type CardVariant = "primary" | "secondary" | "tertiary" | "quartinary";
 
 const Usage = () => {
-  const [slidePosition, setSlidePosition] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
-  const [touchStartX, setTouchStartX] = useState(0);
-  const [touchEndX, setTouchEndX] = useState(0);
-  
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
   const cardVariants: CardVariant[] = ['primary', 'secondary', 'tertiary', 'quartinary'];
+  const { slidePosition, handleBackward, handleForward, touchHandlers } = useCarousel(cardVariants.length, cardRef, containerRef);
   const maxLength = cardVariants.length - 1;
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.touches[0].clientX);
-    setTouchEndX(e.touches[0].clientX);
-  };
   
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEndX(e.touches[0].clientX);
-  };
-  
-  const handleTouchEnd = () => {
-    const swipeDistance = touchEndX - touchStartX;
-    const swipeThreshold = 50; 
-  
-    if (swipeDistance < -swipeThreshold) {
-      setSlidePosition(-((cardVariants.length - visibleCards+0.2) * 100));
-    } else if (swipeDistance > swipeThreshold) {
-      setSlidePosition(0);
-    }
-    setTouchStartX(0);
-    setTouchEndX(0);
-  };
+  const totalShift = calculateTotalShift(visibleCards, maxLength);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setVisibleCards(1);
-      } else if (window.innerWidth < 1024) {
-        setVisibleCards(2);
-      } else if(window.innerWidth < 1900){
-        setVisibleCards(3);
+      if (containerRef.current && cardRef.current) {
+        const containerWidth = containerRef.current.offsetWidth;
+        const cardWidth = cardRef.current.offsetWidth;
+        const computedStyle = window.getComputedStyle(containerRef.current.querySelector('div')!);
+        const gapSize = parseFloat(computedStyle.gap) || 0;
+        const effectiveCardWidth = cardWidth + gapSize;
+        const calculatedVisibleCards = containerWidth / effectiveCardWidth;
+        setVisibleCards(calculatedVisibleCards);
       }
     };
+  
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [cardRef,containerRef]);
 
   return (
     <div className="w-full flex items-center justify-center mb-10">
@@ -59,33 +43,33 @@ const Usage = () => {
           <div>
 
           </div>
-          <div className={`hidden md:flex gap-3 w-[25%] md:w-[10%] mt-2`}>
+          <div className={`hidden lg:flex gap-3 w-[25%] lg:w-[10%] mt-2`}>
             <div 
-              className={`w-12 h-6 md:w-7 md:h-6 flex rounded-sm items-center justify-center bg-[#27272A] cursor-pointer hover:bg-[#3f3f46] ${slidePosition <= 0 ? 'opacity-50' : 'opacity-100'}`}
-              onClick={() => handleBackward({setSlidePosition, visibleCards})}
+              className={`w-12 h-6 md:w-7 md:h-6 flex rounded-sm items-center justify-center bg-[#27272A] cursor-pointer hover:bg-[#3f3f46] ${slidePosition !== 0 ? 'opacity-100' : 'opacity-50'}`}
+              onClick={() => handleBackward()}
             >
               <IoArrowBackSharp size={14} />
             </div>
             <div 
-              className={`w-12 h-6 md:w-7 md:h-6 flex rounded-sm items-center justify-center bg-[#27272A] cursor-pointer hover:bg-[#3f3f46] ${slidePosition > -(cardVariants.length * 5) ? 'opacity-50' : 'opacity-100'}`}
-              onClick={() => handleForward({setSlidePosition, maxLength, visibleCards})}
+              className={`w-12 h-6 md:w-7 md:h-6 flex rounded-sm items-center justify-center bg-[#27272A] cursor-pointer hover:bg-[#3f3f46] ${slidePosition > -totalShift ? 'opacity-100' : 'opacity-50'}`}
+              onClick={() => handleForward()}
             >
               <IoMdArrowRoundForward size={14} />
             </div>
           </div>
         </div>
         
-        <div className="w-full overflow-hidden">
+        <div ref={containerRef} className="w-full overflow-hidden">
         <motion.div 
-        className='flex gap-7 xl:gap-4 '
+        className='flex gap-4'
         animate={{ x: `${slidePosition}%` }}
         transition={{ duration: 1, ease: "easeInOut" }}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
+        onTouchStart={touchHandlers.onTouchStart}
+        onTouchMove={touchHandlers.onTouchMove}
+        onTouchEnd={touchHandlers.onTouchEnd}
       >
         {cardVariants.map((variant, index) => (
-          <div key={index} className="flex-0 w-full md:w-[30%]">
+          <div key={index} ref={index === 0 ? cardRef : null} className="flex-0 w-full lg:w-[30%]">
             <UsageCards variant={variant} />
           </div>
         ))}

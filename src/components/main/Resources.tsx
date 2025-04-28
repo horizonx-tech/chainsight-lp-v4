@@ -31,14 +31,13 @@ const Resources = () => {
     },
   ];
 
-  // Filter resources by title or description
   const filteredResources = resourcesData.filter((resource) =>
     resource.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     resource.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
-    <div className="bg-black border-t-2 border-[#111827] text-white min-h-screen px-4 py-8 md:px-8 lg:px-16" style={{ width: '100vw', maxWidth: '100%' }}>
+    <div className="border-t-2 border-[#111827] text-white min-h-screen px-4 py-8 md:px-8 lg:px-16" style={{ width: '100vw', maxWidth: '100%' }}>
       <div className="max-w-4xl mx-auto text-center my-12">
         <h1 className="text-3xl md:text-4xl font-semibold mb-6">Resources</h1>
         <p className="text-sm text-[#A1A1AA] mb-8">

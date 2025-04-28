@@ -1,19 +1,64 @@
+import { Dispatch, SetStateAction } from "react";
 type SlideParams = {
     setSlidePosition: React.Dispatch<React.SetStateAction<number>>;
     visibleCards: number;
     maxLength?: number;
   };
-  
-export const handleForward = ({ setSlidePosition, visibleCards, maxLength = 0 }: SlideParams) => {
-    setSlidePosition((prev) => {
-      const totalSlides = maxLength + 1 - visibleCards;
-      const cardShift = 120 / (maxLength + 1);
-      const maxSlidePosition = -(totalSlides * cardShift);
-      const nextPosition = prev - cardShift;
-  
-      return nextPosition < maxSlidePosition ? maxSlidePosition : nextPosition;
-    });
+
+  export const handleTouchStart = (
+    setTouchStartX: Dispatch<SetStateAction<number>>, 
+    setTouchEndX: Dispatch<SetStateAction<number>>
+  ) => (e: React.TouchEvent) => {
+    const touchX = e.touches[0].clientX;
+    setTouchStartX(touchX);
+    setTouchEndX(touchX);
   };
+  
+  export const handleTouchMove = (
+    setTouchEndX: Dispatch<SetStateAction<number>>
+  ) => (e: React.TouchEvent) => {
+    const touchX = e.touches[0].clientX;
+    setTouchEndX(touchX);
+  };
+  
+  interface HandleTouchEndProps {
+    touchStartX: number;
+    touchEndX: number;
+    setSlidePosition: Dispatch<SetStateAction<number>>;
+    maxLength: number;
+    visibleCards: number;
+  }
+  
+  export const handleTouchEnd = ({
+    touchStartX,
+    touchEndX,
+    setSlidePosition,
+    maxLength,
+    visibleCards
+  }: HandleTouchEndProps) => () => {
+    const swipeDistance = touchEndX - touchStartX;
+    const swipeThreshold = 50;
+  
+    if (swipeDistance < -swipeThreshold) {
+      handleForward({ setSlidePosition, maxLength, visibleCards });
+    } else if (swipeDistance > swipeThreshold) {
+      handleBackward({ setSlidePosition, visibleCards });
+    }
+  };
+  
+  
+export const handleForward = ({setSlidePosition, visibleCards, maxLength = 0 }: SlideParams) => {
+  console.log("visibleCards",visibleCards)
+    setSlidePosition(prev => {
+        const cardShift = 100 / visibleCards;
+        console.log("cars shift", cardShift)
+        const totalShift = (maxLength + 1 - visibleCards) * cardShift;
+        console.log("total shift", totalShift)
+        const nextPosition = prev - cardShift;
+        return nextPosition < -totalShift ? -totalShift : nextPosition;
+    });
+};
+
   
 export const handleBackward = ({ setSlidePosition, visibleCards }: SlideParams) => {
     setSlidePosition((prev) => {
@@ -23,8 +68,11 @@ export const handleBackward = ({ setSlidePosition, visibleCards }: SlideParams) 
     });
   };
 
-
-
+  export const calculateTotalShift = (visibleCards: number, maxLength: number) => {
+    const cardShift = 100 / visibleCards;
+    return (maxLength + 1 - visibleCards) * cardShift;
+  };
+  
 export  const scrollToElement = (id: string) => {
     const element = document.querySelector(id);
     if (element) {

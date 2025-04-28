@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
 import Navbar from "./components/main/Navbar";
 import Footer from "./components/main/Footer";
 import { ReactNode } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa6";
+
 
 import Hero from "./components/main/Hero";
 import Sponsors from "./components/main/Sponsors";
@@ -51,15 +54,21 @@ function AppLayout({ children }: AppLayoutProps) {
 }
 
 function ComingSoonPage() {
-
+  const navigate = useNavigate();
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen bg-black border-t-2 border-[#111827] text-white px-4"  style={{ width: '100vw', maxWidth: '100%' }}>
+    <div className="relative flex flex-col items-center justify-center w-full h-screen border-t-2 border-[#111827] text-white px-4"  style={{ width: '100vw', maxWidth: '100%' }}>
       <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-pulse">
         🚧 Coming Soon
       </h1>
-      <p className="text-[#A1A1AA] text-center max-w-md mb-8">
+      <p className="text-[#A1A1AA] text-center max-w-md mb-4">
         We're working hard behind the scenes to bring you something amazing. Stay tuned!
       </p>
+      <button
+        onClick={() => navigate('/')}
+        className="text-sm flex items-center text-blue-500 justify-center gap-1 hover:underline transition-all"
+      >
+        <FaArrowLeft /> Back to Home
+      </button>
     </div>
   );
 }
