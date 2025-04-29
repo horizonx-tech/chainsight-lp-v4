@@ -34,7 +34,7 @@ const SubscriptionCards = ({variant, title, content, monthlySubscription, featur
                         ? "bg-[#27272A] text-[#FAFAFA] hover:bg-[#3f3f46]"
                         : "bg-[#FAFAFA] text-[#27272A] hover:hover:bg-[#cecdcd]"
                     } text-xs w-full rounded-lg h-10 mb-3 cursor-pointer active:scale-95`}
-                    onClick={() => window.location.href = "https://v1.chainsight.network/pricing"}
+                    onClick={() => window.open("https://v1.chainsight.network/pricing","_blank")}
                     >
                     Subscribe
                     </button>

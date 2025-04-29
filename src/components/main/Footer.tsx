@@ -12,7 +12,7 @@ const Footer = () => {
         </div>
           <div className="flex flex-col sm:flex-row gap-4 text-lg sm:text-sm text-[#A1A1AA]">
             <div className="flex flex-col items-center justify-center sm:flex-row gap-4">
-            <div className="hover:text-[#fff] cursor-pointer" onClick={() => navigate('/soon')}>About Us</div>
+            <button className="hover:text-[#fff] cursor-pointer" onClick={() => navigate('/soon')}>About Us</button>
               {/* 
               <div className="hover:text-[#fff]">Blog</div>
               <div className="hover:text-[#fff]">Careers</div>

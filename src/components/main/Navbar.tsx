@@ -77,8 +77,8 @@ const Navbar = () => {
               <MdOutlineArrowOutward size={20} className="mt-0.5" />
               Launch App
             </Button>
-          <div className="lg:hidden cursor-pointer z-50" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <AiOutlineClose size={24} className="text-white" /> : <RxHamburgerMenu size={30} />}
+          <div className="lg:hidden cursor-pointer h-5 z-50" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <AiOutlineClose size={24} className="text-white" /> : <RxHamburgerMenu size={24} />}
           </div>
         </div>
       </div>
