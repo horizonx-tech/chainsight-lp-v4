@@ -17,10 +17,10 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { name: "Ecosystem", url: "https://docs.chainsight.network/chainsight-overview/ecosystem" },
     { name: "Product", url: "#product" },
     { name: "Docs", url: "https://docs.chainsight.network/" },
     { name: "Blog", url: "/Blog" },
+    { name: "Ecosystem", url: "https://docs.chainsight.network/chainsight-overview/ecosystem" },
     { name: "Contact Us", url: "#Contact_Us" },
   ];
 
@@ -75,7 +75,7 @@ const Navbar = () => {
               onClick={()=>window.open("https://v1.chainsight.network/", "_blank")}
             >
               <MdOutlineArrowOutward size={20} className="mt-0.5" />
-              Launch App
+              Enter Portal
             </Button>
           <div className="lg:hidden cursor-pointer h-5 z-50" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <AiOutlineClose size={24} className="text-white" /> : <RxHamburgerMenu size={24} />}

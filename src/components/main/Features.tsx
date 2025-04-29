@@ -14,7 +14,7 @@ const items = [
     <path d="M1 6.33333V3.66667C1 2.2 2.2 1 3.66667 1L6.33333 1M19.6667 1L22.3333 1C23.8 1 25 2.2 25 3.66667V6.33333M25 19.6667V22.3333C25 23.8 23.8 25 22.3333 25H19.6667M6.33333 25H3.66667C2.2 25 1 23.8 1 22.3333V19.6667M7.66667 6.33333H14.3333C15.0697 6.33333 15.6667 6.93029 15.6667 7.66667V11.6667C15.6667 12.403 15.0697 13 14.3333 13H7.66667C6.93029 13 6.33333 12.403 6.33333 11.6667V7.66667C6.33333 6.93029 6.93029 6.33333 7.66667 6.33333ZM11.6667 13H18.3333C19.0697 13 19.6667 13.597 19.6667 14.3333V18.3333C19.6667 19.0697 19.0697 19.6667 18.3333 19.6667H11.6667C10.9303 19.6667 10.3333 19.0697 10.3333 18.3333V14.3333C10.3333 13.597 10.9303 13 11.6667 13Z" stroke="currentColor" />
     </svg>
   ),
-  description: "The Oracle contract lives on the destination blockchain. ChainSight typically deploys an Oracle.sol contract on each target EVM & non-EVM chain to serve as the on-chain data store for the feeds. This contract is designed to be flexible – it can store arbitrary data values, each identified by a unique key, and it keeps track of the latest value and when it was updated."
+  description: "The Oracle contract lives on the destination blockchain. ChainSight typically deploys an Oracle.sol contract on each target EVM & non-EVM chain to serve as the on-chain data store for the feeds. This contract is designed to be flexible – it can store arbitrary data values, each identified by a unique key & it keeps track of the latest value & when it was updated."
  },
   { name: "API Access", Icon: (
     <svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">

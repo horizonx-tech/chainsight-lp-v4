@@ -64,7 +64,7 @@ const OracleInfo = () => {
               Fetch, index, insert logic & sync the data to any network. Deploy & monetize your oracles.
             </p>
             <button className='bg-[#FAFAFA] hover:scale-110 text-[#27272A] cursor-pointer flex items-center justify-center text-xs gap-1.5 h-6 p-4 rounded-lg transition-transform duration-200 active:scale-95' onClick={()=>window.open("https://v1.chainsight.network/", "_blank")}>
-              Launch Application <IoMdArrowRoundForward />
+              Enter Portal<IoMdArrowRoundForward />
             </button>
           </div>
 
