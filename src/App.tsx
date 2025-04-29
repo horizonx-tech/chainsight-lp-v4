@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
 import {useRef, useState, useEffect} from "react"
-import { OffsetProvider } from "./utils/offsetContext";
+import { OffsetProvider } from "./utils/OffsetContext";
 
 import Navbar from "./components/main/Navbar";
 import Footer from "./components/main/Footer";
