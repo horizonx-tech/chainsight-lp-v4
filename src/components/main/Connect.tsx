@@ -197,7 +197,7 @@ const Connect = () => {
                   }`}
                 />
                 <div className="text-[#71717A] text-xs sm:text-sm">
-                  I agree to be contacted by TechStrata regarding this demo request *
+                  I agree to be contacted by ChainSight regarding this demo request *
                 </div>
               </div>
               {errors.consent && (

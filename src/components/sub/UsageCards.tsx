@@ -10,7 +10,7 @@ const UsageCards = ({variant}:{variant:'primary'|'secondary'|'tertiary'|'quartin
     primary:{
       icon:"signing.svg",
       title:"Data Signing",
-      description:"Securely sign and publish any data source on-chain using Chain-key cryptography, enabling verifiable feeds like VRF, TWAP, Volatility indices & more."
+      description:"Securely sign & publish any data source on-chain using Chain-key cryptography, enabling verifiable feeds like VRF, TWAP, Volatility Indices & more."
     },
     secondary:{
       icon:"pipelines.svg",
@@ -25,7 +25,7 @@ const UsageCards = ({variant}:{variant:'primary'|'secondary'|'tertiary'|'quartin
     quartinary:{
       icon:"indices.svg",
       title:"On-Chain Analytics & Indices",
-      description:"Leverage powerful tools like Index Kit, Volatility Kit, and Stablecoin Rating Feed to create fully on-chain analytics &  indices via Portal v1."
+      description:"Leverage powerful tools like Index Kit, Volatility Kit & StableCoin Rating Feeds to create fully on-chain analytics & indices via Portal v1."
     }
   }
   return (

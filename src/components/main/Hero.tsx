@@ -6,21 +6,23 @@ import { GoPlus } from "react-icons/go";
 import Lottie from "lottie-react";
 import animationData from "../../assets/animation.json";
 import animationData2 from "../../assets/animation2.json";
+import useOffset from "../../hooks/useOffset"
 
 const Hero = () => {
+  const offset = useOffset();
   return (
     <section className="w-full relative lg:border-y-2 border-[#111827]"  style={{ width: '100vw', maxWidth: '100%' }}>
       <div className="absolute inset-0 pointer-events-none w-full" >
-      <div className="hidden lg:flex absolute -top-1 left-[3.8vw] large-screen-left  -translate-y-3 text-white font-extralight text-xl md:text-2xl lg:text-3xl" >
+      <div className="hidden lg:flex absolute -top-1 -translate-y-3 text-white font-extralight text-xl md:text-2xl lg:text-3xl" style={{ left: offset-17 }}>
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -top-1 right-[3.8vw]  large-screen-right -translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
+      <div className="hidden lg:flex absolute -top-1 -translate-y-3 text-white text-xl md:text-2xl lg:text-3xl" style={{ right: offset - 18}}>
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -bottom-1 left-[3.8vw] large-screen-bottom-left translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
+      <div className="hidden lg:flex absolute -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl" style={{ left: offset - 17}}>
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -bottom-1 right-[3.8vw] large-screen-bottom-right translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
+      <div className="hidden lg:flex absolute -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl" style={{ right: offset - 18}}>
         <GoPlus />
       </div>
 
@@ -75,7 +77,7 @@ const Hero = () => {
               className="flex gap-2 text-xs md:text-sm text-[#FAFAFA] cursor-pointer justify-center items-center "
               onClick={()=>window.open("https://v1.chainsight.network/", "_blank")}
             >
-              Oracle Builder
+              Enter Portal
               <IoMdArrowRoundForward size={15} className=""/> 
             </Button>
           </div>

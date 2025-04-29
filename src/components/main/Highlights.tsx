@@ -4,14 +4,14 @@ const Highlights = () => {
       {
         icon: "flexibility.svg",
         title: 'User Driven Composability',
-        description: 'Build your oracle. No coding necessary. Register data from virtually any source. ',
+        description: 'Build your oracle. Register data from any source. No coding necessary.',
         bgClass: 'bg-[#0E0E0E]',
         iconColor: '#6B7FF6'
       },
       {
         icon: "multichain.svg",
         title: 'Multichain Support',
-        description: 'Bring any data onchain. EVM, SVM & more.',
+        description: 'Bring any data onchain. Any network. EVM, SVM & non-EVMs.',
         bgClass: 'bg-[#121212]',
         iconColor: '#4ECDC4'
       },

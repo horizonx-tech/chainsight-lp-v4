@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo, MutableRefObject } from "react";
+import { useEffect, useState, useMemo, useRef } from "react";
 import {
   calculateTotalShift,
   handleTouchEnd,
@@ -8,11 +8,10 @@ import {
   handleForward,
 } from "../utils/functionalities";
 
-export const useCarousel = (
-  maxItems: number,
-  cardRef: MutableRefObject<HTMLDivElement | null>,
-  containerRef: MutableRefObject<HTMLDivElement | null>
-) => {
+export const useCarousel = (maxItems: number) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+
   const [slidePosition, setSlidePosition] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
   const [touchStartX, setTouchStartX] = useState(0);
@@ -28,10 +27,10 @@ export const useCarousel = (
     const handleResize = () => {
       if (containerRef.current && cardRef.current) {
         const containerWidth = containerRef.current.offsetWidth;
+        console.log("container",containerWidth)
         const cardWidth = cardRef.current.offsetWidth;
-        const computedStyle = window.getComputedStyle(
-          containerRef.current.querySelector("div")!
-        );
+        console.log("card",cardWidth)
+        const computedStyle = window.getComputedStyle(containerRef.current.querySelector("div")!);
         const gapSize = parseFloat(computedStyle.gap) || 0;
         const effectiveCardWidth = cardWidth + gapSize;
         const calculatedVisibleCards = containerWidth / effectiveCardWidth;
@@ -42,9 +41,11 @@ export const useCarousel = (
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [cardRef, containerRef]);
+  }, []);
 
   return {
+    containerRef,
+    cardRef,
     slidePosition,
     setSlidePosition,
     visibleCards,
@@ -52,8 +53,6 @@ export const useCarousel = (
     setTouchStartX,
     touchEndX,
     setTouchEndX,
-    containerRef,
-    cardRef,
     maxLength,
     totalShift,
     handleBackward: () =>

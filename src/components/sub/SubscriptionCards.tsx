@@ -1,5 +1,6 @@
 import { TiTick } from "react-icons/ti"; 
 import { PiWarningCircleLight } from "react-icons/pi";  
+import {scrollToElement} from "../../utils/functionalities"
 
 interface SubscriptionCardsProps {
     variant: string,
@@ -34,7 +35,13 @@ const SubscriptionCards = ({variant, title, content, monthlySubscription, featur
                         ? "bg-[#27272A] text-[#FAFAFA] hover:bg-[#3f3f46]"
                         : "bg-[#FAFAFA] text-[#27272A] hover:hover:bg-[#cecdcd]"
                     } text-xs w-full rounded-lg h-10 mb-3 cursor-pointer active:scale-95`}
-                    onClick={() => window.open("https://v1.chainsight.network/pricing","_blank")}
+                    onClick={() => {
+                        if (window.innerWidth > 1024) {
+                          window.open("https://v1.chainsight.network/pricing", "_blank");
+                        } else {
+                          scrollToElement("#Contact_Us");
+                        }
+                      }}
                     >
                     Subscribe
                     </button>

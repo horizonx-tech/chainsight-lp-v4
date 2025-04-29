@@ -1,8 +1,10 @@
 import { GoPlus } from "react-icons/go";
 import { motion } from "framer-motion";
 import { useEffect, useState, useMemo} from "react";
+import useOffset from "../../hooks/useOffset"
 
 const Sponsors = () => {
+  const offset = useOffset();
   const baseSponsors = useMemo(
     () => ["polygon", "plume", "bnb", "bevm", "nero", "berachain", "lumia", "movement", "optimism","overlay", "sonic", "IVX","polyhedra","rise","infrared","dolomite","BX3","bit10"],
     []
@@ -20,10 +22,10 @@ const Sponsors = () => {
 
   return (
     <div className="flex relative w-full items-center justify-center md:border-b-2 border-[#111827] mt-8 md:mt-0">
-      <div className="hidden lg:flex absolute -bottom-1 left-[3.8vw] large-screen-left  translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
+      <div className="hidden lg:flex absolute -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"  style={{ left: offset-17 }}>
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -bottom-1 right-[3.8vw] large-screen-right translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
+      <div className="hidden lg:flex absolute -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"  style={{ right: offset-18 }}>
         <GoPlus />
       </div>
 
