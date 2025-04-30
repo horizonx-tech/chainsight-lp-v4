@@ -1,10 +1,8 @@
 import { GoPlus } from "react-icons/go";
 import { motion } from "framer-motion";
 import { useEffect, useState, useMemo} from "react";
-import useOffset from "../../hooks/useOffset"
 
 const Sponsors = () => {
-  const offset = useOffset();
   const baseSponsors = useMemo(
     () => ["polygon", "plume", "bnb", "bevm", "nero", "berachain", "lumia", "movement", "optimism","overlay", "sonic", "IVX","polyhedra","rise","infrared","dolomite","BX3","bit10"],
     []
@@ -21,14 +19,15 @@ const Sponsors = () => {
   }, [baseSponsors]);
 
   return (
-    <div className="flex relative w-full items-center justify-center md:border-b-2 border-[#111827] mt-8 md:mt-0">
-      <div className="hidden lg:flex absolute -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"  style={{ left: offset-17 }}>
+    <section className="w-[100vw] relative lg:border-y-2 flex  justify-center border-[#111827] " >
+    <div className="absolute w-[90vw] pointer-events-none top-0 bottom-0">
+      <div className="hidden lg:flex absolute -left-[17px] -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"  >
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"  style={{ right: offset-18 }}>
+      <div className="hidden lg:flex absolute -right-[19px] -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"  >
         <GoPlus />
       </div>
-
+      </div>
       <div className="flex relative max-w-[90vw] overflow-hidden">
         <motion.div
           transition={{
@@ -53,7 +52,7 @@ const Sponsors = () => {
 
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -6,23 +6,21 @@ import { GoPlus } from "react-icons/go";
 import Lottie from "lottie-react";
 import animationData from "../../assets/animation.json";
 import animationData2 from "../../assets/animation2.json";
-import useOffset from "../../hooks/useOffset"
 
 const Hero = () => {
-  const offset = useOffset();
   return (
-    <section className="w-full relative lg:border-y-2 border-[#111827]"  style={{ width: '100vw', maxWidth: '100%' }}>
-      <div className="absolute inset-0 pointer-events-none w-full" >
-      <div className="hidden lg:flex absolute -top-1 -translate-y-3 text-white font-extralight text-xl md:text-2xl lg:text-3xl" style={{ left: offset-17 }}>
+    <section className="w-[100vw] relative lg:border-y-2 flex  justify-center border-[#111827] " >
+      <div className="absolute w-[90vw] pointer-events-none top-0 bottom-0">
+      <div className="hidden lg:flex absolute -left-[17px] -top-[4px] -translate-y-3 text-white font-extralight text-xl md:text-2xl lg:text-3xl">
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -top-1 -translate-y-3 text-white text-xl md:text-2xl lg:text-3xl" style={{ right: offset - 18}}>
+      <div className="hidden lg:flex absolute -right-[19px] -top-[4px] -translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl" style={{ left: offset - 17}}>
+      <div className="hidden lg:flex absolute z-50 -left-[17px] -bottom-[6px] translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl" style={{ right: offset - 18}}>
+      <div className="hidden lg:flex absolute -right-[19px] -bottom-[6px] z-50 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl">
         <GoPlus />
       </div>
 
