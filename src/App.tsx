@@ -50,7 +50,7 @@ function AppLayout({ children }: AppLayoutProps) {
       if (plusRef.current) {
         const rect = plusRef.current.getBoundingClientRect();
         const rawOffset = rect.left;
-        const correctedOffset = Math.round(rawOffset * window.devicePixelRatio);
+        const correctedOffset = Math.round(rawOffset);
         setOffset(correctedOffset);        
       }
     };
