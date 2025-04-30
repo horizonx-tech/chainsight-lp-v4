@@ -21,10 +21,10 @@ const Sponsors = () => {
   return (
     <section className="w-[100vw] relative lg:border-y-2 flex  justify-center border-[#111827] " >
     <div className="absolute w-[90vw] pointer-events-none top-0 bottom-0">
-      <div className="hidden lg:flex absolute -left-[17px] -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"  >
+      <div className="hidden lg:flex absolute left-0 bottom-0  transform -translate-x-1/2 translate-y-1/2 text-white text-xl md:text-2xl lg:text-3xl"  >
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -right-[19px] -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"  >
+      <div className="hidden lg:flex absolute right-0 bottom-0  transform translate-x-1/2 translate-y-1/2 text-white text-xl md:text-2xl lg:text-3xl"  >
         <GoPlus />
       </div>
       </div>
