@@ -1,6 +1,4 @@
 import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
-import {useRef, useState, useEffect} from "react"
-import { OffsetProvider } from "./utils/OffsetContext";
 
 import Navbar from "./components/main/Navbar";
 import Footer from "./components/main/Footer";
@@ -43,32 +41,13 @@ interface AppLayoutProps {
 }
 
 function AppLayout({ children }: AppLayoutProps) {
-  const plusRef = useRef<HTMLDivElement | null>(null);
-  const [offset, setOffset] = useState(0);
-  useEffect(() => {
-    const handleResize = () => {
-      if (plusRef.current) {
-        const rect = plusRef.current.getBoundingClientRect();
-        const rawOffset = rect.left;
-        const correctedOffset = Math.round(rawOffset);
-        setOffset(correctedOffset);        
-      }
-    };
-  
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  
   return (
     <div className="relative flex items-center justify-center bg-[#00000] overflow-x-clip">
-      <div className="hidden lg:flex absolute bg-transparent h-full w-[90vw] border-x-2 border-[#111827] -z-50 plus-container" ref={plusRef}></div>
+      <div className="hidden lg:flex absolute bg-transparent h-full w-[90vw] border-x-2 border-[#111827] -z-50 plus-container"></div>
       <div className="">
-      <OffsetProvider value={offset}>
         <Navbar />
         {children}
         <Footer />
-      </OffsetProvider>
       </div>
     </div>
   );
