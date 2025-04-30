@@ -13,16 +13,16 @@ const Hero = () => {
   return (
     <section className="w-full relative lg:border-y-2 border-[#111827]"  style={{ width: '100vw', maxWidth: '100%' }}>
       <div className="absolute inset-0 pointer-events-none w-full" >
-      <div className="hidden lg:flex absolute -top-1 -translate-y-3 text-white font-extralight text-xl md:text-2xl lg:text-3xl" style={{ left: offset-17 }}>
+      <div className="hidden lg:flex absolute -top-1 -translate-y-3 text-white font-extralight text-xl md:text-2xl lg:text-3xl" style={{ left: offset-10 }}>
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -top-1 -translate-y-3 text-white text-xl md:text-2xl lg:text-3xl" style={{ right: offset - 18}}>
+      <div className="hidden lg:flex absolute -top-1 -translate-y-3 text-white text-xl md:text-2xl lg:text-3xl" style={{ right: offset - 11}}>
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl" style={{ left: offset - 17}}>
+      <div className="hidden lg:flex absolute -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl" style={{ left: offset - 10}}>
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl" style={{ right: offset - 18}}>
+      <div className="hidden lg:flex absolute -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl" style={{ right: offset - 11}}>
         <GoPlus />
       </div>
 
