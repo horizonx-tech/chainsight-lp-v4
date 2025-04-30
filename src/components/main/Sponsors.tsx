@@ -22,10 +22,10 @@ const Sponsors = () => {
 
   return (
     <div className="flex relative w-full items-center justify-center md:border-b-2 border-[#111827] mt-8 md:mt-0">
-      <div className="hidden lg:flex absolute -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"  style={{ left: offset-17 }}>
+      <div className="hidden lg:flex absolute -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"  style={{ left: offset-10 }}>
         <GoPlus />
       </div>
-      <div className="hidden lg:flex absolute -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"  style={{ right: offset-18 }}>
+      <div className="hidden lg:flex absolute -bottom-1 translate-y-3 text-white text-xl md:text-2xl lg:text-3xl"  style={{ right: offset-11 }}>
         <GoPlus />
       </div>
 

@@ -49,8 +49,9 @@ function AppLayout({ children }: AppLayoutProps) {
     const handleResize = () => {
       if (plusRef.current) {
         const rect = plusRef.current.getBoundingClientRect();
-        const leftOffset = rect.left; 
-        setOffset(leftOffset);        
+        const rawOffset = rect.left;
+        const correctedOffset = Math.round(rawOffset * window.devicePixelRatio);
+        setOffset(correctedOffset);        
       }
     };
   
