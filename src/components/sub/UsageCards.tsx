@@ -8,7 +8,7 @@ const UsageCards = ({variant}:{variant:'primary'|'secondary'|'tertiary'|'quartin
   }
   const Usage={
     primary:{
-      icon:"signing.svg",
+      icon:"Vector.png",
       title:"Data Signing",
       description:"Securely sign & publish any data source on-chain using Chain-key cryptography, enabling verifiable feeds like VRF, TWAP, Volatility Indices & more."
     },

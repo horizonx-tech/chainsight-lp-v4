@@ -159,7 +159,7 @@ const Updates = () => {
                     color: '#e7e9ea',
                   }}
                 >
-                  <div>
+                  <div className="flex flex-col gap-4">
                     <div className="flex gap-2 items-start mb-2">
                       <img src="/chainsight.jpg" alt="ChainSight Logo" className="w-9 h-8 rounded" />
                       <div className="flex flex-col">
