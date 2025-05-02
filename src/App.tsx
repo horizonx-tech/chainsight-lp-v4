@@ -43,7 +43,7 @@ interface AppLayoutProps {
 function AppLayout({ children }: AppLayoutProps) {
   return (
     <div className="relative flex items-center justify-center bg-[#00000] overflow-x-clip">
-      <div className="hidden lg:flex absolute bg-transparent h-full w-[90vw] border-x-2 border-[#111827] -z-50 "></div>
+      <div className="hidden lg:flex absolute bg-transparent h-full w-[90vw] border-x-1 border-[#111827] -z-50 "></div>
       <div className="">
         <Navbar />
         {children}

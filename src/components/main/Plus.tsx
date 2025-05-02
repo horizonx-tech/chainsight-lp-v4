@@ -1,11 +1,10 @@
-
 const Plus = () => {
   return (
-    <div className="h-[30px] w-[30px] flex relative items-center justify-center">
-        <div className="h-full border absolute z-10"></div>
-        <div className="w-full border absolute z-20"></div>
+    <div className="relative w-[22px] h-[22px] flex items-center justify-center ">
+      <div className="absolute w-full h-[1px] bg-white z-10"></div>
+      <div className="absolute h-full w-[1px] bg-white z-10"></div>
     </div>
   )
 }
 
-export default Plus
+export default Plus;

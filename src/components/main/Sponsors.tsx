@@ -19,12 +19,12 @@ const Sponsors = () => {
   }, [baseSponsors]);
 
   return (
-    <section className="w-[100vw] relative lg:border-b-2 flex  justify-center border-[#111827] " >
+    <section className="w-[100vw] relative lg:border-b-1 flex  justify-center border-[#111827] " >
     <div className="absolute w-[90vw] pointer-events-none top-0 bottom-0">
-      <div className="hidden lg:flex absolute left-0 bottom-0  transform -translate-x-[45%] translate-y-[53%] text-white text-xl md:text-2xl lg:text-3xl"  >
+      <div className="hidden lg:flex absolute left-0 bottom-0  transform -translate-x-[44%] translate-y-[52.5%] text-white text-xl md:text-2xl lg:text-3xl"  >
         <Plus />
       </div>
-      <div className="hidden lg:flex absolute right-0 bottom-0  transform translate-x-[48%] translate-y-[53%] text-white text-xl md:text-2xl lg:text-3xl"  >
+      <div className="hidden lg:flex absolute right-0 bottom-0  transform translate-x-[49%] translate-y-[52.5%] text-white text-xl md:text-2xl lg:text-3xl"  >
         <Plus />
       </div>
       </div>
