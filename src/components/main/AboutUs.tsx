@@ -3,20 +3,20 @@ import { FaLinkedin, FaTwitter } from "react-icons/fa";
 export default function AboutUs() {
   const team = [
     {
+        name: "Wasim Fukase",
+        role: "Co-Founder & CEO",
+        description:
+          "Wasim comes from the VC world. Ex-Hashed EM, Helion Capital, SBK Holdings. He’s the one turning big ideas into real plans.",
+        image: "/About/Wasim.webp",
+        socials: { linkedin: "https://www.linkedin.com/in/wasimfukase/", twitter: "https://x.com/getoutofhome" },
+      },
+    {
       name: "Shumpei Koike",
       role: "Co-Founder & CTO",
       description:
         "Shumpei is a builder. He’s led dev teams at DMM Bitcoin and Simplex, and founded Starlay Finance. Clean code, solid products.",
       image: "/About/shumpei.webp",
       socials: { linkedin: "https://www.linkedin.com/in/shumpeikoike/", twitter: "https://x.com/0xshumpei" },
-    },
-    {
-      name: "Wasim Fukase",
-      role: "Co-Founder & CEO",
-      description:
-        "Wasim comes from the VC world. Ex-Hashed EM, Helion Capital, SBK Holdings. He’s the one turning big ideas into real plans.",
-      image: "/About/Wasim.webp",
-      socials: { linkedin: "https://www.linkedin.com/in/wasimfukase/", twitter: "https://x.com/getoutofhome" },
     },
     {
       name: "Sunny Mahmood",
