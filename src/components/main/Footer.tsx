@@ -37,7 +37,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             ><div className="hover:text-[#fff]">X</div></a>
             <a 
-              href="https://discord.com/invite/kMkUZKyD" 
+              href="https://discord.gg/3FDTsy9Y" 
               target="_blank" 
               rel="noopener noreferrer"
             ><div className="hover:text-[#fff]">Discord</div></a>
@@ -57,7 +57,7 @@ const Footer = () => {
           <hr className="border-t border-[#27272A] my-[10px]" />
           
           <div className="flex flex-col sm:flex-row justify-between text-lg sm:text-sm text-[#A1A1AA] gap-4">
-            <div className="text-center sm:text-left">Copyright 2025 © ChainSight.network</div>
+            <div className="text-center sm:text-left">Copyright 2025 © HORIZONX LIMITED</div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
               href="https://chainsight.network/docs/privacy" 
