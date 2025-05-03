@@ -17,6 +17,7 @@ import Subscription from "./components/main/Subscription";
 import Faq from "./components/main/Faq";
 import Updates from "./components/main/Updates";
 import Connect from "./components/main/Connect";
+import AboutUs from "./components/main/AboutUs";
 
 import Resources from "./components/main/Resources";
 function HomePage() {
@@ -91,6 +92,11 @@ function App() {
         <Route path="/soon" element={
           <AppLayout>
             <ComingSoonPage />
+          </AppLayout>
+        } />
+        <Route path="/aboutus" element={
+          <AppLayout>
+            <AboutUs />
           </AppLayout>
         } />
       </Routes>

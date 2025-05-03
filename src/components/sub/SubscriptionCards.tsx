@@ -1,5 +1,4 @@
-import { TiTick } from "react-icons/ti"; 
-import { PiWarningCircleLight } from "react-icons/pi";  
+import { TiTick } from "react-icons/ti";
 import {scrollToElement} from "../../utils/functionalities"
 
 interface SubscriptionCardsProps {
@@ -57,9 +56,6 @@ const SubscriptionCards = ({variant, title, content, monthlySubscription, featur
                                     <div className="flex items-start  gap-3">
                                         <TiTick className="text-lg"/> 
                                         <span className="text-[#A1A1AA] w-full">{feature}</span>
-                                    </div>
-                                     <div className="text-[#A1A1AA]">
-                                        <PiWarningCircleLight />
                                     </div>
                                  </div>
                              )

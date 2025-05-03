@@ -6,13 +6,13 @@ const Footer = () => {
   return (
     <div className="absolute left-0 right-0 w-full flex justify-center">
       <div className="w-full" style={{backgroundColor: theme.colors.background.secondary}}>
-        <div className="p-15 flex flex-col items-center md:items-start gap-14 sm:gap-8 px-4 sm:px-15">
+        <div className="p-15 flex flex-col items-center md:items-start gap-4 sm:gap-8 px-4 sm:px-15">
         <div className="w-[122px] h-[18px]">
               <img src="/logo.svg" alt="ChainSight"/>
         </div>
           <div className="flex flex-col sm:flex-row gap-4 text-lg sm:text-sm text-[#A1A1AA]">
             <div className="flex flex-col items-center justify-center sm:flex-row gap-4">
-            <button className="hover:text-[#fff] cursor-pointer" onClick={() => navigate('/soon')}>About Us</button>
+            <button className="hover:text-[#fff] cursor-pointer" onClick={() => navigate('/aboutus')}>About Us</button>
               {/* 
               <div className="hover:text-[#fff]">Blog</div>
               <div className="hover:text-[#fff]">Careers</div>
@@ -24,8 +24,6 @@ const Footer = () => {
             ><div className="hover:text-[#fff]">Media Kit</div></a>
             </div>
           </div>
-          
-          {/* Social Links */}
           <div className="flex flex-col sm:flex-row gap-4 text-lg sm:text-sm text-[#A1A1AA]">
             <div className="flex flex-col items-center justify-center sm:flex-row gap-4">
             <a 
@@ -39,7 +37,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             ><div className="hover:text-[#fff]">X</div></a>
             <a 
-              href="https://discord.com/invite/kMkUZKyD" 
+              href="https://discord.gg/3FDTsy9Y" 
               target="_blank" 
               rel="noopener noreferrer"
             ><div className="hover:text-[#fff]">Discord</div></a>
@@ -59,7 +57,7 @@ const Footer = () => {
           <hr className="border-t border-[#27272A] my-[10px]" />
           
           <div className="flex flex-col sm:flex-row justify-between text-lg sm:text-sm text-[#A1A1AA] gap-4">
-            <div className="text-center sm:text-left">Copyright 2025 © ChainSight.network</div>
+            <div className="text-center sm:text-left">Copyright 2025 © HORIZONX LIMITED</div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
               href="https://chainsight.network/docs/privacy" 
