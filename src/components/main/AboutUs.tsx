@@ -14,7 +14,7 @@ export default function AboutUs() {
       name: "Shumpei Koike",
       role: "Co-Founder & CTO",
       description:
-        "Shumpei is a builder. He’s led dev teams at DMM Bitcoin and Simplex, and founded Starlay Finance. Clean code, solid products.",
+        "Shumpei is a builder. He led 50+ devs on exchange infra at Simplex and co-authored a stablecoin-ratings paper.",
       image: "/About/shumpei.webp",
       socials: { linkedin: "https://www.linkedin.com/in/shumpeikoike/", twitter: "https://x.com/0xshumpei" },
     },
