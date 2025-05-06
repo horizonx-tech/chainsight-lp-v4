@@ -15,11 +15,14 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { name: "Product", url: "#product" },
+    { name: "Product", url: "/#product" },
     { name: "Docs", url: "https://docs.chainsight.network/" },
-    { name: "Blog", url: "/Blog" },
-    { name: "Ecosystem", url: "https://docs.chainsight.network/chainsight-overview/ecosystem" },
-    { name: "Contact Us", url: "#Contact_Us" },
+    { name: "Blog", url: "/blog" },
+    {
+      name: "Ecosystem",
+      url: "https://docs.chainsight.network/chainsight-overview/ecosystem",
+    },
+    { name: "Contact Us", url: "/#Contact_Us" },
   ];
 
   return (
