@@ -81,7 +81,7 @@ const Connect = () => {
     <div id="Contact_Us" className="flex flex-col items-center justify-center gap-6 my-10 px-4 sm:px-8 md:px-16 lg:px-20 w-full">
       <div className="flex flex-col gap-1 items-center text-center w-full max-w-md">
         <h3 className="text-[#FAFAFA] text-xl font-bold">Let’s connect</h3>
-        <p className="text-[#71717A] text-xs sm:text-sm">
+        <p className="text-[#A1A1AA] text-xs sm:text-sm">
           Leave us a line, we contact you within a few hours.
         </p>
       </div>
@@ -127,6 +127,7 @@ const Connect = () => {
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
+                aria-label="Company Name"
                 className={`border p-2 rounded-md w-full bg-[#09090B] placeholder:text-xs placeholder:text-[#A1A1AA] ${
                   errors.company ? "border-red-400" : "border-[#27272A]"
                 }`}
@@ -143,6 +144,7 @@ const Connect = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
+                aria-label="Full Name"
                 className={`border p-2 rounded-md w-full bg-[#09090B] placeholder:text-xs placeholder:text-[#A1A1AA] ${
                   errors.name ? "border-red-400" : "border-[#27272A]"
                 }`}
@@ -158,6 +160,7 @@ const Connect = () => {
                 type="email"
                 name="email"
                 value={formData.email}
+                aria-label="Email Address"
                 onChange={handleChange}
                 className={`border p-2 rounded-md w-full bg-[#09090B] placeholder:text-xs placeholder:text-[#A1A1AA] ${
                   errors.email ? "border-red-400" : "border-[#27272A]"
@@ -175,6 +178,7 @@ const Connect = () => {
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
+                aria-label="Message"
                 className={`border p-2 rounded-md w-full bg-[#09090B] resize-none placeholder:text-xs placeholder:text-[#A1A1AA] ${
                   errors.message ? "border-red-400" : "border-[#27272A]"
                 }`}
@@ -190,13 +194,14 @@ const Connect = () => {
                 <input
                   type="checkbox"
                   name="consent"
+                  aria-label="I agree to be contacted by ChainSight regarding this demo request"
                   checked={formData.consent}
                   onChange={handleChange}
                   className={`w-4 h-4 bg-transparent border cursor-pointer mt-1 ${
                     errors.consent ? "border-red-400" : "border-gray-500"
                   }`}
                 />
-                <div className="text-[#71717A] text-xs sm:text-sm">
+                <div className="text-[#A1A1AA] text-xs sm:text-sm">
                   I agree to be contacted by ChainSight regarding this demo request *
                 </div>
               </div>

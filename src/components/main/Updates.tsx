@@ -19,10 +19,8 @@ const Updates = () => {
       if (containerRef.current && cardRef.current) {
         const containerWidth = containerRef.current.offsetWidth;
         const cardWidth = cardRef.current.offsetWidth;
-        console.log("card",cardWidth)
         const computedStyle = window.getComputedStyle(containerRef.current.querySelector('div')!);
         const gapSize = parseFloat(computedStyle.gap) || 0;
-        console.log("gap",gapSize)
         const effectiveCardWidth = cardWidth + gapSize;
         const calculatedVisibleCards = containerWidth / effectiveCardWidth;
         setVisibleCards(calculatedVisibleCards);
@@ -161,7 +159,7 @@ const Updates = () => {
                 >
                   <div className="flex flex-col gap-4">
                     <div className="flex gap-2 items-start mb-2">
-                      <img src="/chainsight.jpg" alt="ChainSight Logo" className="w-9 h-8 rounded" />
+                      <img src="/chainsight.jpg" alt="ChainSight Logo" width="36" height="32" className="w-9 h-8 rounded" />
                       <div className="flex flex-col">
                         <span className="text-white font-semibold leading-tight">ChainSight ✨</span>
                         <span className="text-gray-400 text-[11px]">@ChainSight_</span>

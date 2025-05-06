@@ -27,9 +27,7 @@ export const useCarousel = (maxItems: number) => {
     const handleResize = () => {
       if (containerRef.current && cardRef.current) {
         const containerWidth = containerRef.current.offsetWidth;
-        console.log("container",containerWidth)
         const cardWidth = cardRef.current.offsetWidth;
-        console.log("card",cardWidth)
         const computedStyle = window.getComputedStyle(containerRef.current.querySelector("div")!);
         const gapSize = parseFloat(computedStyle.gap) || 0;
         const effectiveCardWidth = cardWidth + gapSize;

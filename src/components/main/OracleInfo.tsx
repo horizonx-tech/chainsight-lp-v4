@@ -1,21 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef} from "react";
 import { IoMdArrowRoundForward } from "react-icons/io";
-import { HiSpeakerXMark, HiSpeakerWave } from "react-icons/hi2"; // mute/unmute icons
 import Button from "../sub/Button";
 import { scrollToElement } from "../../utils/functionalities";
 
 const OracleInfo = () => {
-  const [muted, setMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !muted;
-      videoRef.current.volume = muted ? 1 : 0;
-      setMuted(!muted);
-      videoRef.current.play().catch(console.error);
-    }
-  };
 
   useEffect(() => {
     const currentVideo = videoRef.current;
@@ -71,19 +60,16 @@ const OracleInfo = () => {
           <div className="relative w-full z-10">
             <video
               ref={videoRef}
-              src="/demo.MP4"
+              src="/demo.mp4"
               className="w-full "
-              muted={muted}
+              muted
               playsInline
               loop
               preload="metadata"
-            />
-            <button
-              onClick={toggleMute}
-              className="absolute top-3 right-3 bg-black bg-opacity-60 text-white p-2 rounded-full"
+              controls
             >
-              {muted ? <HiSpeakerXMark size={20} /> : <HiSpeakerWave size={20} />}
-            </button>
+            <track src="/demo.vtt" kind="captions" srcLang="en" label="english_captions"/>
+            </video>
           </div>
         </div>
       </div>
