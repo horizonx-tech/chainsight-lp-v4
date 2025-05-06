@@ -18,9 +18,8 @@ const Navbar = () => {
 
   const menuItems = [
     { name: "Product", url: "#product" },
-    { name: "Docs", url: "https://docs.chainsight.network/" },
     { name: "Blog", url: "/Blog" },
-    { name: "Ecosystem", url: "https://docs.chainsight.network/chainsight-overview/ecosystem" },
+    { name: "Ecosystem", url: "/soon" },
     { name: "Contact Us", url: "#Contact_Us" },
   ];
 
@@ -57,7 +56,7 @@ const Navbar = () => {
                       }
                     }}
                     className={`my-3 px-3 h-2 flex items-center justify-center hover:cursor-pointer relative group-hover:text-[#FFE000] ${
-                      index < 4
+                      index < 3
                         ? "after:content-[''] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:h-2 after:border-r-2 after:border-[#27272A]"
                         : ""
                     }`}
