@@ -12,7 +12,7 @@ const FaqItem = ({ question, answer }:{question: string, answer: string | JSX.El
       <div 
         className="flex justify-between items-center cursor-pointer "
       >
-        <h4 className="text-[#FAFAFA] text-base font-normal">{question}</h4>
+        <p className="text-[#FAFAFA] text-base font-normal">{question}</p>
         <motion.span 
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}

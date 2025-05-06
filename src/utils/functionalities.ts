@@ -48,12 +48,9 @@ type SlideParams = {
   
   
 export const handleForward = ({setSlidePosition, visibleCards, maxLength = 0 }: SlideParams) => {
-  console.log("visibleCards",visibleCards)
     setSlidePosition(prev => {
         const cardShift = 100 / visibleCards;
-        console.log("cars shift", cardShift)
         const totalShift = (maxLength + 1 - visibleCards) * cardShift;
-        console.log("total shift", totalShift)
         const nextPosition = prev - cardShift;
         return nextPosition < -totalShift ? -totalShift : nextPosition;
     });

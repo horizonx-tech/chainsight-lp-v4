@@ -6,25 +6,27 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
 import { scrollToElement } from "../../utils/functionalities";
-import {useNavigate} from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate= useNavigate()
   const menuVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeInOut" } },
   };
 
   const menuItems = [
-    { name: "Product", url: "#product" },
-    { name: "Blog", url: "/Blog" },
-    { name: "Ecosystem", url: "/soon" },
-    { name: "Contact Us", url: "#Contact_Us" },
+    { name: "Product", url: "/#product" },
+    { name: "Docs", url: "https://docs.chainsight.network/" },
+    { name: "Blog", url: "/blog" },
+    {
+      name: "Ecosystem",
+      url: "/soon",
+    },
+    { name: "Contact Us", url: "/#Contact_Us" },
   ];
 
   return (
-    <div className="relative top-6 left-0 w-full mb-20 sm:mb-0 flex justify-center z-50">
+    <div className="relative top-7 left-0 w-full mb-20 sm:mb-0 flex justify-center z-50">
       <div className="absolute top-0 left-0 w-full h-24 pointer-events-none">
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[30vw] h-40 bg-[#4A4A4A] blur-[100px] opacity-35 rounded-full"></div>
       </div>
@@ -32,41 +34,42 @@ const Navbar = () => {
       <div className="flex flex-col relative items-center justify-center w-full z-10">
         <div className="w-[85vw] flex items-center justify-between">
           <div className="flex">
-            <div className="w-[124px] h-[20px]  cursor-pointer bg-[#000000]" onClick={()=>navigate("/")}>
+            <a
+              href="/"
+              className="w-[124px] h-[20px]  cursor-pointer bg-[#000000]"
+            >
               <img src="/logo.svg" alt="ChainSight" />
-            </div>
+            </a>
           </div>
           <div className="hidden lg:flex flex-col items-center relative">
-            <div
-              className="bg-[#18181B] text-[#FAFAFA] rounded-full flex p-1.5 font-semibold text-xs font-sans"
-              style={{ color: theme.colors.text.primary }}
-            >
-              {menuItems.map((item, index) => (
-                <div className="relative group" key={index}>
-                  <button className="transition-all ease-in-out duration-700 group-hover:bg-[#27272A] absolute inset-0 rounded-full mx-1 p-4"></button>
-                  <div
-                    onClick={() => {
-                      if (item.url.startsWith("http")) {
-                        window.open(item.url, "_blank");
-                      } else if (item.url.startsWith("#")) {
-                        navigate("/")
-                        scrollToElement(item.url);
-                      } else {
-                        window.location.href = item.url;
-                      }
-                    }}
-                    className={`my-3 px-3 h-2 flex items-center justify-center hover:cursor-pointer relative group-hover:text-[#FFE000] ${
-                      index < 3
-                        ? "after:content-[''] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:h-2 after:border-r-2 after:border-[#27272A]"
-                        : ""
-                    }`}
-                  >
-                    {item.name}
+              <div
+                className="bg-[#18181B] text-[#FAFAFA] rounded-full flex p-1.5 font-semibold text-xs font-sans"
+                style={{ color: theme.colors.text.primary }}
+              >
+                {menuItems.map((item, index) => (
+                  <div className="relative group" key={index}>
+                    <a
+                      href={item.url}
+                      target={item.url.startsWith("http") ? "_blank" : undefined}
+                      aria-label={item.name}
+                      className={`
+                        px-4 py-2 min-w-[48px] min-h-[48px]
+                        flex items-center justify-center relative rounded-full
+                        group-hover:text-[#FFE000] text-xs font-semibold transition-colors
+                        overflow-hidden
+                        before:content-[''] before:absolute before:inset-0 before:rounded-full
+                        before:bg-[#27272A] before:opacity-0 before:transition-opacity before:duration-700
+                        group-hover:before:opacity-100
+                        ${index < 4 ? "after:content-[''] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:h-2 after:border-r-2 after:border-[#27272A]" : ""}
+                      `}
+                    >
+                      <span className="relative z-10">{item.name}</span>
+                    </a>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+
             <Button
               variant="primary"
               size="lg"

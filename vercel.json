@@ -1,4 +1,6 @@
 {
+  "outputDirectory": "dist/client",
+  "cleanUrls": true,
   "headers": [
     {
       "source": "/(.*).webp",
@@ -26,6 +28,9 @@
   },
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/(.*)", "destination": "/" } 
+    {
+      "source": "/docs/:subdir*",
+      "destination": "https://chainsight-lp-git-subdir-docs-horizonx-tech.vercel.app/docs/:subdir*"
+    }
   ]
 }
