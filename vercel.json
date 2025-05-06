@@ -1,4 +1,6 @@
 {
+  "outputDirectory": "dist",
+  "cleanUrls": true,
   "headers": [
     {
       "source": "/(.*).webp",
