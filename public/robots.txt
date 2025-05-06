@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://chainsight.network
+
+# Sitemaps
+Sitemap: https://chainsight.network/sitemap.xml

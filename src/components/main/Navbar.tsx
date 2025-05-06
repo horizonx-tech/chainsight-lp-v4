@@ -6,22 +6,23 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
 import { scrollToElement } from "../../utils/functionalities";
-import {useNavigate} from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate= useNavigate()
   const menuVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeInOut" } },
   };
 
   const menuItems = [
-    { name: "Product", url: "#product" },
+    { name: "Product", url: "/#product" },
     { name: "Docs", url: "https://docs.chainsight.network/" },
-    { name: "Blog", url: "/Blog" },
-    { name: "Ecosystem", url: "https://docs.chainsight.network/chainsight-overview/ecosystem" },
-    { name: "Contact Us", url: "#Contact_Us" },
+    { name: "Blog", url: "/blog" },
+    {
+      name: "Ecosystem",
+      url: "https://docs.chainsight.network/chainsight-overview/ecosystem",
+    },
+    { name: "Contact Us", url: "/#Contact_Us" },
   ];
 
   return (
@@ -33,9 +34,12 @@ const Navbar = () => {
       <div className="flex flex-col relative items-center justify-center w-full z-10">
         <div className="w-[85vw] flex items-center justify-between">
           <div className="flex">
-            <div className="w-[124px] h-[20px]  cursor-pointer bg-[#000000]" onClick={()=>navigate("/")}>
+            <a
+              href="/"
+              className="w-[124px] h-[20px]  cursor-pointer bg-[#000000]"
+            >
               <img src="/logo.svg" alt="ChainSight" />
-            </div>
+            </a>
           </div>
           <div className="hidden lg:flex flex-col items-center relative">
             <div
@@ -45,17 +49,9 @@ const Navbar = () => {
               {menuItems.map((item, index) => (
                 <div className="relative group" key={index}>
                   <button className="transition-all ease-in-out duration-700 group-hover:bg-[#27272A] absolute inset-0 rounded-full mx-1 p-4"></button>
-                  <div
-                    onClick={() => {
-                      if (item.url.startsWith("http")) {
-                        window.open(item.url, "_blank");
-                      } else if (item.url.startsWith("#")) {
-                        navigate("/")
-                        scrollToElement(item.url);
-                      } else {
-                        window.location.href = item.url;
-                      }
-                    }}
+                  <a
+                    href={item.url}
+                    target={item.url.startsWith("http") ? "_blank" : undefined}
                     className={`my-3 px-3 h-2 flex items-center justify-center hover:cursor-pointer relative group-hover:text-[#FFE000] ${
                       index < 4
                         ? "after:content-[''] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:h-2 after:border-r-2 after:border-[#27272A]"
@@ -63,7 +59,7 @@ const Navbar = () => {
                     }`}
                   >
                     {item.name}
-                  </div>
+                  </a>
                 </div>
               ))}
             </div>
