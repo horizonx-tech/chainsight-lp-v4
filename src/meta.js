@@ -4,7 +4,7 @@ const siteMetadata = {
     "Launch and verify flexible multi-source oracles in minutes with ChainSight—secure, cost-efficient, self-serve",
   author: "ChainSight",
   siteUrl: "https://chainsight.network",
-  image: "https://chainsight.network/ogimage.png",
+  image: "https://chainsight-lp-v4.vercel.app/ogimage.png",
 };
 
 export const meta = () => {
