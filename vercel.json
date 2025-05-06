@@ -1,5 +1,5 @@
 {
-  "outputDirectory": "dist",
+  "outputDirectory": "dist/client",
   "cleanUrls": true,
   "headers": [
     {
@@ -31,7 +31,6 @@
     {
       "source": "/docs/:subdir*",
       "destination": "https://chainsight-lp-git-subdir-docs-horizonx-tech.vercel.app/docs/:subdir*"
-    },
-    { "source": "/(.*)", "destination": "/" }
+    }
   ]
 }
