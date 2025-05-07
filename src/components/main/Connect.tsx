@@ -190,7 +190,7 @@ const Connect = () => {
             </div>
 
             <div className="flex flex-col gap-1">
-              <div className="flex items-start gap-2">
+              <label className="flex items-start gap-2 cursor-pointer">
                 <input
                   type="checkbox"
                   name="consent"
@@ -201,10 +201,18 @@ const Connect = () => {
                     errors.consent ? "border-red-400" : "border-gray-500"
                   }`}
                 />
-                <div className="text-[#A1A1AA] text-xs sm:text-sm">
-                  I agree to be contacted by ChainSight regarding this demo request *
+                <div className="text-[#71717A] text-xs sm:text-sm">
+                  I have read and agree to our{" "}
+                  <a
+                    href="https://chainsight.network/docs/privacy"
+                    target="_blank"
+                    className="hover:text-[#FFE000]"
+                  >
+                    Privacy Policy
+                  </a>
+                  .
                 </div>
-              </div>
+              </label>
               {errors.consent && (
                 <div className="text-red-400 text-xs ml-6">{errors.consent}</div>
               )}
