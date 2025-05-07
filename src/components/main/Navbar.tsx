@@ -16,13 +16,13 @@ const Navbar = () => {
 
   const menuItems = [
     { name: "Product", url: "/#product" },
-    { name: "Docs", url: "https://docs.chainsight.network/" },
     { name: "Blog", url: "/blog" },
     {
       name: "Ecosystem",
       url: "/soon",
     },
     { name: "Contact Us", url: "/#Contact_Us" },
+    { name: "Docs", url: "https://docs.chainsight.network/" }
   ];
 
   return (
@@ -53,14 +53,14 @@ const Navbar = () => {
                       target={item.url.startsWith("http") ? "_blank" : undefined}
                       aria-label={item.name}
                       className={`
-                        px-4 py-2 min-w-[48px] min-h-[48px]
+                        px-4 py-1 min-w-[48px] min-h-[48px]
                         flex items-center justify-center relative rounded-full
                         group-hover:text-[#FFE000] text-xs font-semibold transition-colors
                         overflow-hidden
                         before:content-[''] before:absolute before:inset-0 before:rounded-full
                         before:bg-[#27272A] before:opacity-0 before:transition-opacity before:duration-700
                         group-hover:before:opacity-100
-                        ${index < 4 ? "after:content-[''] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:h-2 after:border-r-2 after:border-[#27272A]" : ""}
+                        ${index < 4 ? "after:content-[''] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:h-3 after:border-r-2 after:border-[#27272A]" : ""}
                       `}
                     >
                       <span className="relative z-10">{item.name}</span>
