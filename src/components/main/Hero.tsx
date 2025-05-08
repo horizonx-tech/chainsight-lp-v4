@@ -2,8 +2,8 @@ import theme from "../../constants/theme";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { MdArrowOutward } from "react-icons/md";
 import Button from "../sub/Button";
-import animationData from "../../assets/animation.json";
-import animationData2 from "../../assets/animation2.json";
+import animationData from "../../assets/Desktop.json";
+import animationData2 from "../../assets/Mobile.json";
 import Plus from "./Plus";
 import { lazy, Suspense } from "react";
 
