@@ -167,7 +167,7 @@ const Updates = () => {
                       </div>
                     </div>
 
-                    <p className="text-sm leading-snug mb-2 text-justify">
+                    <p className="text-sm leading-snug mb-2">
                       {linkifyText(tweet.text)}
                     </p>
 
