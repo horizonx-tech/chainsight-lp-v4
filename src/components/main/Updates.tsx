@@ -4,6 +4,7 @@ import { IoArrowBackSharp } from "react-icons/io5";
 import { handleBackward, handleForward, calculateTotalShift,  handleTouchEnd, handleTouchMove, handleTouchStart} from "../../utils/functionalities";
 import { motion } from "framer-motion";
 import { Tweet } from "../../utils/types";
+import { decodeHtml } from "../../utils/text";
 
 const Updates = () => {
   const [slidePosition, setSlidePosition] = useState(0);
@@ -104,7 +105,7 @@ const Updates = () => {
           </a>
         );
       }
-      return <span key={i}>{word} </span>;
+      return <span key={i}>{decodeHtml(word)} </span>;
     });
   };
 
@@ -172,7 +173,7 @@ const Updates = () => {
                       </div>
                     </div>
 
-                    <p className="text-sm leading-snug mb-2 text-justify">
+                    <p className="text-sm leading-snug mb-2">
                       {linkifyText(tweet.text)}
                     </p>
 
