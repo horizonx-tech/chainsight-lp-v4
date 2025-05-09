@@ -35,49 +35,49 @@ const Updates = () => {
   useEffect(() => {
     const fetchTweets = async () => {
       try {
-        // const res = await fetch("/api/x/posts");
-        // const result: Tweet[] = await res.json();
-        const result: Tweet[] = [
-          {
-            "created_at": "2025-04-23T17:45:24.000Z",
-            "edit_history_tweet_ids": ["1915099702414209034"],
-            "text": "@chainlink @PythNetwork Check out our docs to learn more: https://t.co/EflGLMW1qJ",
-            "id": "1915099702414209034"
-          },
-          {
-            "created_at": "2025-04-23T17:45:21.000Z",
-            "edit_history_tweet_ids": ["1915099689881641275"],
-            "text": "Not just another feed.\n\nChainSight’s MultiOracle Aggregator:\n\n– Runs on-chain\n– Applies timestamp-based weighting\n– Uses a dynamic weighted mean for accuracy\n\nThe First MultiOracle Price Feed: One Feed to Rule Them All. ✨ https://t.co/faqFVjiNMg",
-            "id": "1915099689881641275",
-            "attachments": {
-              "media": [
-                {
-                  "media_key": "3_1915099687662821376",
-                  "type": "photo",
-                  "url": "https://pbs.twimg.com/media/GpPNBPCaoAA3i3B.jpg"
-                }
-              ]
-            }
-          },
-          {
-            "created_at": "2025-04-23T15:44:40.000Z",
-            "edit_history_tweet_ids": ["1915069317244178685"],
-            "text": "Join in 15 mins: The Golden Hour live ✨ https://t.co/JUxCStlGzO",
-            "id": "1915069317244178685"
-          },
-          {
-            "created_at": "2025-04-23T04:00:01.000Z",
-            "edit_history_tweet_ids": ["1914891988161458194"],
-            "text": "Wen @Solana?\n\nSoon…\n\nhttps://t.co/T4edMyuwKF https://t.co/l39bDCWIAc",
-            "id": "1914891988161458194"
-          },
-          {
-            "created_at": "2025-04-22T14:00:21.000Z",
-            "edit_history_tweet_ids": ["1914680676668059755"],
-            "text": "ChainSight’s real-time feeds & analytics will provide TwinFinance users with enhanced accurate, reliable data.\n\nFollow us and @TwinFinance for updates as we redefine the future of DeFi!\n\n(3/3)",
-            "id": "1914680676668059755"
-          }
-        ];
+        const res = await fetch("/api/x/posts");
+        const result: Tweet[] = await res.json();
+        // const result: Tweet[] = [
+        //   {
+        //     "created_at": "2025-04-23T17:45:24.000Z",
+        //     "edit_history_tweet_ids": ["1915099702414209034"],
+        //     "text": "@chainlink @PythNetwork Check out our docs to learn more: https://t.co/EflGLMW1qJ",
+        //     "id": "1915099702414209034"
+        //   },
+        //   {
+        //     "created_at": "2025-04-23T17:45:21.000Z",
+        //     "edit_history_tweet_ids": ["1915099689881641275"],
+        //     "text": "Not just another feed.\n\nChainSight’s MultiOracle Aggregator:\n\n– Runs on-chain\n– Applies timestamp-based weighting\n– Uses a dynamic weighted mean for accuracy\n\nThe First MultiOracle Price Feed: One Feed to Rule Them All. ✨ https://t.co/faqFVjiNMg",
+        //     "id": "1915099689881641275",
+        //     "attachments": {
+        //       "media": [
+        //         {
+        //           "media_key": "3_1915099687662821376",
+        //           "type": "photo",
+        //           "url": "https://pbs.twimg.com/media/GpPNBPCaoAA3i3B.jpg"
+        //         }
+        //       ]
+        //     }
+        //   },
+        //   {
+        //     "created_at": "2025-04-23T15:44:40.000Z",
+        //     "edit_history_tweet_ids": ["1915069317244178685"],
+        //     "text": "Join in 15 mins: The Golden Hour live ✨ https://t.co/JUxCStlGzO",
+        //     "id": "1915069317244178685"
+        //   },
+        //   {
+        //     "created_at": "2025-04-23T04:00:01.000Z",
+        //     "edit_history_tweet_ids": ["1914891988161458194"],
+        //     "text": "Wen @Solana?\n\nSoon…\n\nhttps://t.co/T4edMyuwKF https://t.co/l39bDCWIAc",
+        //     "id": "1914891988161458194"
+        //   },
+        //   {
+        //     "created_at": "2025-04-22T14:00:21.000Z",
+        //     "edit_history_tweet_ids": ["1914680676668059755"],
+        //     "text": "ChainSight’s real-time feeds & analytics will provide TwinFinance users with enhanced accurate, reliable data.\n\nFollow us and @TwinFinance for updates as we redefine the future of DeFi!\n\n(3/3)",
+        //     "id": "1914680676668059755"
+        //   }
+        // ];
         setTweets(result);
       } catch (err) {
         console.error("Error fetching tweets:", err);
