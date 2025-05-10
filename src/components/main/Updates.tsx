@@ -160,7 +160,13 @@ const Updates = () => {
                 >
                   <div className="flex flex-col gap-4">
                     <div className="flex gap-2 items-start mb-2">
-                      <img src="/chainsight.jpg" alt="ChainSight Logo" width="36" height="32" className="w-9 h-8 rounded" />
+                    <div className="aspect-square w-9">
+                        <img
+                          src="/chainsight.jpg"
+                          alt="ChainSight Logo"
+                          className="w-full h-full object-contain rounded"
+                        />
+                    </div>
                       <div className="flex flex-col">
                         <span className="text-white font-semibold leading-tight">ChainSight ✨</span>
                         <span className="text-gray-400 text-[11px]">@ChainSight_</span>

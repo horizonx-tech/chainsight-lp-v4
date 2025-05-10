@@ -2,10 +2,11 @@ import theme from "../../constants/theme";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { MdArrowOutward } from "react-icons/md";
 import Button from "../sub/Button";
-import animationData from "../../assets/animation.json";
-import animationData2 from "../../assets/animation2.json";
+import animationData from "../../assets/Desktop.json";
+import animationData2 from "../../assets/Mobile.json";
 import Plus from "./Plus";
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
+import { ClientOnly } from "../sub/ClientOnly";
 
 const Lottie = lazy(() => import("../sub/LazyLottie"));
 
@@ -29,7 +30,7 @@ const Hero = () => {
       </div>
       <div className="flex flex-col min-h-screen items-center justify-center font-sans gap-10 md:gap-12 px-4 md:px-10 lg:px-12 mx-auto w-full">
         <div className="w-full flex sm:hidden items-center justify-center">
-          <Suspense fallback={null}>
+          <ClientOnly>
             <Lottie
               animationData={animationData2}
               loop
@@ -37,7 +38,7 @@ const Hero = () => {
               className="w-full"
               style={{ transform: "scale(1)", transformOrigin: "center" }}
             />
-          </Suspense>
+          </ClientOnly>
         </div>
         <div className="flex flex-col items-start px-4 sm:px-0 sm:items-center justify-center text-center w-full gap-3 sm:gap-0 max-w-4xl pt-4 md:pt-7">
           <div 
@@ -84,7 +85,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="hidden max-w-[80vw] sm:flex w-full h-auto md:h-[215px] mt-4 md:mt-[10px] px-0">
-          <Suspense fallback={null}>
+          <ClientOnly>
             <Lottie
               animationData={animationData}
               loop
@@ -92,7 +93,7 @@ const Hero = () => {
               className="w-full h-full"
               style={{ transform: "scale(1.3)", transformOrigin: "center" }}
             />
-          </Suspense>
+          </ClientOnly>
         </div>
       </div>
     </section>

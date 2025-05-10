@@ -1,12 +1,18 @@
-import Lottie, { LottieComponentProps } from "lottie-react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import type { LottieComponentProps } from "lottie-react";
 
-const LazyLottie = (props: LottieComponentProps) => {
-  const [show, setShow] = useState(false);
+const LazyLottie: React.FC<LottieComponentProps> = (props) => {
+  const [Lottie, setLottie] = useState<React.ComponentType<LottieComponentProps> | null>(null);
+
   useEffect(() => {
-    setShow(true);
+    import("lottie-react").then((mod) => {
+      setLottie(() => mod.default);
+    });
   }, []);
-  return show && <Lottie {...props} />;
+
+  if (!Lottie) return null;
+
+  return <Lottie {...props} />;
 };
 
 export default LazyLottie;

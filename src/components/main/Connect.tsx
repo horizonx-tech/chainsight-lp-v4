@@ -201,7 +201,7 @@ const Connect = () => {
                     errors.consent ? "border-red-400" : "border-gray-500"
                   }`}
                 />
-                <div className="text-[#71717A] text-xs sm:text-sm">
+                <div className="text-[#A1A1AA] text-xs sm:text-sm">
                   I have read and agree to our{" "}
                   <a
                     href="https://chainsight.network/docs/privacy"
