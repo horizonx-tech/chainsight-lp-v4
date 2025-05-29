@@ -7,6 +7,7 @@ import animationData2 from "../../assets/Mobile.json";
 import Plus from "./Plus";
 import { lazy } from "react";
 import { ClientOnly } from "../sub/ClientOnly";
+import TVS from "../sub/TVS";
 
 const Lottie = lazy(() => import("../sub/LazyLottie"));
 
@@ -63,7 +64,8 @@ const Hero = () => {
           >
             Securely register data from any source, verify its integrity & deploy it to any network.
           </div>
-          <div className="flex gap-3 md:gap-[15px] mt-4 md:mt-6 ">
+          <div className="flex flex-col">
+            <div className="flex gap-3 md:gap-[15px] mt-4 md:mt-6 ">
             <Button 
               variant="secondary" 
               size="sm" 
@@ -82,6 +84,8 @@ const Hero = () => {
               Enter Portal
               <IoMdArrowRoundForward size={15} className=""/> 
             </Button>
+          </div>
+            <TVS/>
           </div>
         </div>
         <div className="hidden max-w-[80vw] sm:flex w-full h-auto md:h-[215px] mt-4 md:mt-[10px] px-0">
