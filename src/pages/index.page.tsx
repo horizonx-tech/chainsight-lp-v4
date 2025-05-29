@@ -8,7 +8,6 @@ import Subscription from "../components/main/Subscription";
 import Faq from "../components/main/Faq";
 import Updates from "../components/main/Updates";
 import Connect from "../components/main/Connect";
-import TVS from "../components/main/TVS";
 import { AppLayout } from "../layout";
 
 export const Page = () => {
@@ -16,7 +15,6 @@ export const Page = () => {
     <AppLayout>
       <Hero />
       <Sponsors />
-      <TVS/>
       <Highlights />
       <Features />
       <OracleInfo />
