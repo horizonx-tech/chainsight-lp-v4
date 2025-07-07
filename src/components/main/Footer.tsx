@@ -51,6 +51,11 @@ const Footer = () => {
               target="_blank" 
               rel="noopener noreferrer"
             ><div className="hover:text-[#fff]">Github</div></a>
+            <a 
+              href="https://medium.com/@Chainsight_Network" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            ><div className="hover:text-[#fff]">Medium</div></a>
             </div>
           </div>
           
